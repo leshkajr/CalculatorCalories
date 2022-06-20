@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="calculator_calories_daily_fitness_diet_icon_149045.ico" />
+    <None Remove="calories %281%29.png" />
+    <None Remove="calories %282%29.png" />
+    <None Remove="calories %283%29.png" />
+    <None Remove="calories.png" />
+    <None Remove="potato.png" />
+    <None Remove="tomato.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.6" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="calories.png" />
+    <Resource Include="Image\potato.png" />
+    <Resource Include="Image\tomato.png" />
+  </ItemGroup>
+
+</Project>

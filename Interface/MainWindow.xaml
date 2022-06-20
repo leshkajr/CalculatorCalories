@@ -1,0 +1,255 @@
+﻿<Window x:Class="Interface.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="Calculator Calories" Height="600" Width="910" Icon="/calories.png" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="listBoxProduct" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                            </Border.Effect>
+                            <StackPanel Margin="10">
+                                <TextBlock Foreground="#FF4A316A" HorizontalAlignment="Center" Text="{Binding Name}" FontFamily="Montserrat ExtraBold" FontSize="20"></TextBlock>
+                                <Border Margin="0,3,0,3" Background="#FFCFB4EB" CornerRadius="15" HorizontalAlignment="Stretch">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Calories}" Foreground="#DD7B53A6" FontFamily="Montserrat Black" FontSize="45" Margin="15,1,0,0"></TextBlock>
+                                        <Border Margin="-8,1,15,5" VerticalAlignment="Bottom" Background="#00AF8FCF" CornerRadius="10">
+                                            <TextBlock Text="ккал" Foreground="#DD68478C" FontFamily="Montserrat Black" FontSize="12" Margin="7,3,7,3"></TextBlock>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
+
+                                <Grid Margin="3,-2,3,0">
+                                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignToolButton}">
+                                        <materialDesign:PackIcon Kind="Edit" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                    </Button>
+                                    <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolButton}">
+                                        <materialDesign:PackIcon Kind="Delete" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="listBoxDishes" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                            </Border.Effect>
+                            <StackPanel Margin="10">
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" FontFamily="Montserrat Medium" FontSize="14"></TextBlock>
+                                <Border Margin="0,5,0,5" Background="#FFCFB4EB" CornerRadius="10">
+                                    <Image Width="100" Height="100" Margin="10" Source="{Binding Image}"/>
+                                </Border>
+
+                                <Grid>
+                                    <Border Margin="0,3,0,3" Background="#FFCFB4EB" CornerRadius="10" HorizontalAlignment="Left">
+                                        <Label Content="{Binding Calories}" FontFamily="Montserrat Medium" Margin="5,1,5,0"></Label>
+                                    </Border>
+                                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                        <Button Style="{StaticResource MaterialDesignToolButton}">
+                                            <materialDesign:PackIcon Kind="Edit" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                        </Button>
+                                        <Button Style="{StaticResource MaterialDesignToolButton}">
+                                            <materialDesign:PackIcon Kind="Delete" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                        </Button>
+                                    </StackPanel>
+
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid UseLayoutRounding="True">
+        <TabControl Style="{StaticResource MaterialDesignNavigatilRailTabControl}">
+            <TabItem>
+                <TabItem.Header>
+                    <materialDesign:PackIcon Kind="Home" 
+                                             Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                             Height="36" Width="36"/>
+                </TabItem.Header>
+                <Grid Background="#FFF5ECFF" Margin="0">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <Border Margin="0,5,11,5" Background="#FFDEC1FD" CornerRadius="20"  HorizontalAlignment="Right">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                                </Border.Effect>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="userName" Text="UserName" Margin="11 0 6 0" VerticalAlignment="Center" FontSize="15" FontFamily="Montserrat Medium"/>
+                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                                        Height="35" Width="35" Margin="5" Background="#FFAB78E0" 
+                                        BorderBrush="#FFC29BEB">
+                                        <materialDesign:PackIcon Kind="Close" 
+                                                     Foreground="{DynamicResource MaterialDesignDarkBackground}"
+                                                     Height="23" Width="23"/>
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+                            <StackPanel>
+                                <Border Margin="15,5,15,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                    <StackPanel>
+                                        <TextBlock Text="Ваша дневная норма калорий в день:" FontSize="25"
+                                       FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="2300 ккал" FontSize="100"
+                                       FontFamily="Montserrat Black" Foreground="#DD7B53A6" HorizontalAlignment="Center" />
+                                        <Button Content="Изменить потенциальную цель" FontFamily="Montserrat SemiBold"
+                                        Style="{StaticResource MaterialDesignRaisedButton}" Padding="159,0,159,0" Background="#DD7B53A6" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <Border Margin="15,5,15,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                            <StackPanel>
+                                                <TextBlock Text="Вес:" Margin="10 0 0 0" FontSize="25" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
+                                                <TextBlock Text="100 кг" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
+                                                <Button Content="Изменить" FontFamily="Montserrat SemiBold"
+                                                        Style="{StaticResource MaterialDesignRaisedButton}"
+                                                        Background="#DD7B53A6" HorizontalAlignment="Stretch"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <Border Margin="15,5,15,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                            <StackPanel>
+                                                <TextBlock Text="Рост:" Margin="10 0 0 0" FontSize="25"
+                                       FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
+                                                <TextBlock Text="185 см" Margin="10 0 0 0" FontSize="80"
+                                       FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
+                                                <Button Content="Изменить" FontFamily="Montserrat SemiBold"
+                                                        Style="{StaticResource MaterialDesignRaisedButton}"
+                                                        Background="#DD7B53A6" HorizontalAlignment="Stretch"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+
+                            </StackPanel>
+                            
+                        </StackPanel>
+                    </ScrollViewer>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <materialDesign:PackIcon Kind="FoodApple" 
+                                             Foreground="{DynamicResource PrimaryHueLightBrush}" 
+                                             Height="36" Width="36"/>
+                </TabItem.Header>
+                <StackPanel Background="#FFF5ECFF">
+                    <Border Background="#FFE7D7F7" CornerRadius="15" Margin="10,5,10,0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                        </Border.Effect>
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" Height="35"
+                                VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <Button Margin="10,0,10,0" Style="{StaticResource MaterialDesignToolButton}">
+                                    <materialDesign:PackIcon Kind="Search" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                </Button>
+                                <TextBox FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" Width="250" FontSize="17" Margin="0,5,0,0"></TextBox>
+                            </StackPanel>
+
+                            <Button Margin="0,0,17,0" Style="{StaticResource MaterialDesignToolButton}" HorizontalAlignment="Right">
+                                <materialDesign:PackIcon Kind="Plus" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                            </Button>
+                        </Grid>
+                    </Border>
+                    
+                    
+                    <ListBox Margin="10" x:Name="listBoxProducts" 
+                             Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+                             ItemContainerStyle="{StaticResource listBoxProduct}" Background="Transparent">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <materialDesign:PackIcon Kind="FoodTurkey" 
+                                             Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                             Height="36" Width="36"/>
+                </TabItem.Header>
+                <StackPanel Background="#FFF5ECFF">
+                    <Border Background="#FFE7D7F7" CornerRadius="15" Margin="10,5,10,0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                        </Border.Effect>
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" Height="35"
+                                VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <Button Margin="10,0,10,0" Style="{StaticResource MaterialDesignToolButton}">
+                                    <materialDesign:PackIcon Kind="Search" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                </Button>
+                                <TextBox FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" Width="250" FontSize="17" Margin="0,5,0,0"></TextBox>
+                            </StackPanel>
+
+                            <Button Margin="0,0,17,0" Style="{StaticResource MaterialDesignToolButton}" HorizontalAlignment="Right">
+                                <materialDesign:PackIcon Kind="Plus" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+
+                    <ListBox Margin="10" x:Name="listBoxDishes" 
+                             Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+                             ItemContainerStyle="{StaticResource listBoxDishes}" Background="Transparent">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+       
+
+    </Grid>
+</Window>
