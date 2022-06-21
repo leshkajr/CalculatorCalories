@@ -9,20 +9,19 @@
         Title="Авторизация" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#ffdadada"  UseLayoutRounding="True">
         <Border MinWidth="400" MaxWidth="550" Margin="15" Background="White" VerticalAlignment="Center" 
-                Padding="30" CornerRadius="20">
+                Padding="30,30,30,15" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" FontFamily="Montserrat"/>
-                <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Регистрация" FontFamily="Montserrat" Click="Button_Registr_Click"/>
-                    <Button HorizontalAlignment="Right" Content="Войти" FontFamily="Montserrat" Style="{StaticResource MaterialDesignFlatButton}"/>
-                </Grid>
+                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 5" FontFamily="Montserrat"/>
+
 
                 <TextBox materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                 <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
-                <Button Content="Авторизоваться" Margin="0 20" FontFamily="Montserrat" Click="Button_Auth_Click"/>
+                <Button Content="Авторизоваться" Margin="0,20,0,0" FontFamily="Montserrat" Click="Button_Auth_Click"/>
+                <TextBlock HorizontalAlignment="Center" Text="Регистрация" FontFamily="Montserrat" Margin="0,5,0,0" 
+                            Foreground="{StaticResource PrimaryHueMidBrush}" MouseDown="Button_Registr_Click"/>
             </StackPanel>
         </Border>
     </Grid>

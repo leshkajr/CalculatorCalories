@@ -41,6 +41,13 @@ namespace Interface
                 new Product("Potato",20),
                 new Product("Potato",20),
                 new Product("Potato",20),
+                new Product("Potato",20),
+                new Product("Potato",20),
+                new Product("Potato",20),
+                new Product("Potato",20),
+                new Product("Potato",20),
+                new Product("Potato",20),
+                new Product("Potato",20),
             };
             listBoxProducts.ItemsSource = list;
         }

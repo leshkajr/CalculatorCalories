@@ -6,13 +6,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Interface"
         mc:Ignorable="d"
-        Title="Calculator Calories" Height="600" Width="910" Icon="/calories.png" WindowStartupLocation="CenterScreen">
+        Title="Calculator Calories" Height="600" Width="900" Icon="/calories.png" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="listBoxProduct" TargetType="ListBoxItem">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120">
+                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="220">
                             <Border.Effect>
                                 <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
                             </Border.Effect>
@@ -45,45 +45,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <Style x:Key="listBoxDishes" TargetType="ListBoxItem">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ListBoxItem">
-                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10">
-                            <Border.Effect>
-                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
-                            </Border.Effect>
-                            <StackPanel Margin="10">
-                                <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" FontFamily="Montserrat Medium" FontSize="14"></TextBlock>
-                                <Border Margin="0,5,0,5" Background="#FFCFB4EB" CornerRadius="10">
-                                    <Image Width="100" Height="100" Margin="10" Source="{Binding Image}"/>
-                                </Border>
-
-                                <Grid>
-                                    <Border Margin="0,3,0,3" Background="#FFCFB4EB" CornerRadius="10" HorizontalAlignment="Left">
-                                        <Label Content="{Binding Calories}" FontFamily="Montserrat Medium" Margin="5,1,5,0"></Label>
-                                    </Border>
-                                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                        <Button Style="{StaticResource MaterialDesignToolButton}">
-                                            <materialDesign:PackIcon Kind="Edit" 
-                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
-                                                     Height="23" Width="23"/>
-                                        </Button>
-                                        <Button Style="{StaticResource MaterialDesignToolButton}">
-                                            <materialDesign:PackIcon Kind="Delete" 
-                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
-                                                     Height="23" Width="23"/>
-                                        </Button>
-                                    </StackPanel>
-
-                                </Grid>
-                            </StackPanel>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
     </Window.Resources>
     <Grid UseLayoutRounding="True">
         <TabControl Style="{StaticResource MaterialDesignNavigatilRailTabControl}">
@@ -96,23 +57,47 @@
                 <Grid Background="#FFF5ECFF" Margin="0">
                     <ScrollViewer>
                         <StackPanel>
-                            <Border Margin="0,5,11,5" Background="#FFDEC1FD" CornerRadius="20"  HorizontalAlignment="Right">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
-                                </Border.Effect>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="userName" Text="UserName" Margin="11 0 6 0" VerticalAlignment="Center" FontSize="15" FontFamily="Montserrat Medium"/>
-                                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
+                            <Grid>
+                                <Border Margin="15,5,11,5" Background="#FFDEC1FD" CornerRadius="20"  HorizontalAlignment="Left">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                                    </Border.Effect>
+                                    <StackPanel Orientation="Horizontal">
+                                        <RadioButton Content="Уменьшение веса" Margin="10,0,0,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold"/>
+                                        <RadioButton Content="Увеличение веса" Margin="10,0,0,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold"/>
+                                        <RadioButton Content="Сохранение веса" Margin="10,0,15,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Margin="0,5,10,5" Background="#FFDEC1FD" CornerRadius="20"  HorizontalAlignment="Right">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                                    </Border.Effect>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="userName" Text="UserName" Margin="11 1.5 6 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" FontFamily="Montserrat Medium"/>
+                                        <Button Style="{StaticResource MaterialDesignIconForegroundButton}" 
                                         Height="35" Width="35" Margin="5" Background="#FFAB78E0" 
                                         BorderBrush="#FFC29BEB">
-                                        <materialDesign:PackIcon Kind="Close" 
+                                            <materialDesign:PackIcon Kind="Close" 
                                                      Foreground="{DynamicResource MaterialDesignDarkBackground}"
                                                      Height="23" Width="23"/>
-                                    </Button>
-                                </StackPanel>
-                            </Border>
+                                        </Button>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            
                             <StackPanel>
-                                <Border Margin="15,5,15,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                <Border Margin="15,5,10,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                    <StackPanel>
+                                        <TextBlock Text="Ваша дневная норма калорий в день:" FontSize="25"
+                                       FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="2300 ккал" FontSize="100"
+                                       FontFamily="Montserrat Black" Foreground="#DD7B53A6" HorizontalAlignment="Center" />
+                                        <Button Content="Изменить потенциальную цель" FontFamily="Montserrat SemiBold"
+                                        Style="{StaticResource MaterialDesignRaisedButton}" Padding="159,0,159,0" Background="#DD7B53A6" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Margin="15,5,10,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
                                     <StackPanel>
                                         <TextBlock Text="Ваша дневная норма калорий в день:" FontSize="25"
                                        FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
@@ -129,7 +114,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <Grid>
-                                        <Border Margin="15,5,15,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                        <Border Margin="15,5,10,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
                                             <StackPanel>
                                                 <TextBlock Text="Вес:" Margin="10 0 0 0" FontSize="25" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
@@ -142,7 +127,7 @@
                                         </Border>
                                     </Grid>
                                     <Grid Grid.Column="1">
-                                        <Border Margin="15,5,15,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
+                                        <Border Margin="15,5,10,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
                                             <StackPanel>
                                                 <TextBlock Text="Рост:" Margin="10 0 0 0" FontSize="25"
                                        FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
@@ -192,60 +177,63 @@
                             </Button>
                         </Grid>
                     </Border>
-                    
-                    
-                    <ListBox Margin="10" x:Name="listBoxProducts" 
-                             Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
-                             ItemContainerStyle="{StaticResource listBoxProduct}" Background="Transparent">
+
+
+                    <ListBox Margin="10" x:Name="listBoxProducts" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                             ItemContainerStyle="{StaticResource listBoxProduct}" Background="Transparent" Height="524">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal"/>
                             </ItemsPanelTemplate>
                         </ListBox.ItemsPanel>
                     </ListBox>
+
                 </StackPanel>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <materialDesign:PackIcon Kind="FoodTurkey" 
+                    <materialDesign:PackIcon Kind="Hours24" 
                                              Foreground="{DynamicResource PrimaryHueLightBrush}"
                                              Height="36" Width="36"/>
                 </TabItem.Header>
-                <StackPanel Background="#FFF5ECFF">
-                    <Border Background="#FFE7D7F7" CornerRadius="15" Margin="10,5,10,0">
+                <Grid Background="#FFF5ECFF">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="13*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <ListBox Margin="10" x:Name="listBoxProductsForOneDay" 
+                             Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+                             ItemContainerStyle="{StaticResource listBoxProduct}" Background="Transparent">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                        </ListBox>
+                    </StackPanel>
+
+                    <Border Background="#FFE7D7F7" CornerRadius="15" Margin="10,5,10,5" Grid.Row="1">
                         <Border.Effect>
                             <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
                         </Border.Effect>
                         <Grid>
-                            <StackPanel Orientation="Horizontal" Height="35"
-                                VerticalAlignment="Top" HorizontalAlignment="Left">
-                                <Button Margin="10,0,10,0" Style="{StaticResource MaterialDesignToolButton}">
-                                    <materialDesign:PackIcon Kind="Search" 
+                            <Button Margin="15,0,0,0" Style="{StaticResource MaterialDesignToolButton}" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="Plus" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
-                                </Button>
-                                <TextBox FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" Width="250" FontSize="17" Margin="0,5,0,0"></TextBox>
-                            </StackPanel>
+                            </Button>
 
-                            <Button Margin="0,0,17,0" Style="{StaticResource MaterialDesignToolButton}" HorizontalAlignment="Right">
-                                <materialDesign:PackIcon Kind="Plus" 
+                            <Button Margin="0,0,15,0" Style="{StaticResource MaterialDesignToolButton}" HorizontalAlignment="Right">
+                                <materialDesign:PackIcon Kind="Autorenew" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
                             </Button>
                         </Grid>
                     </Border>
 
-
-                    <ListBox Margin="10" x:Name="listBoxDishes" 
-                             Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
-                             ItemContainerStyle="{StaticResource listBoxDishes}" Background="Transparent">
-                        <ListBox.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ListBox.ItemsPanel>
-                    </ListBox>
-                </StackPanel>
+                </Grid>
+                
             </TabItem>
         </TabControl>
 
