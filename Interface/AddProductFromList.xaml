@@ -1,0 +1,97 @@
+﻿<Window x:Class="Interface.AddProductFromList"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="AddProductFromList" Height="650" Width="1020" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="listBoxProduct" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="215">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                            </Border.Effect>
+                            <StackPanel Margin="10">
+                                <TextBlock Foreground="#FF4A316A" HorizontalAlignment="Center" Text="{Binding Name}" FontFamily="Montserrat ExtraBold" FontSize="20"></TextBlock>
+                                <Border Margin="0,3,0,3" Background="#FFCFB4EB" CornerRadius="15" HorizontalAlignment="Stretch">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Calories}" Foreground="#DD7B53A6" FontFamily="Montserrat Black" FontSize="45" Margin="15,1,0,0"></TextBlock>
+                                        <Border Margin="-8,1,15,5" VerticalAlignment="Bottom" Background="#00AF8FCF" CornerRadius="10">
+                                            <TextBlock Text="ккал" Foreground="#DD68478C" FontFamily="Montserrat Black" FontSize="12" Margin="7,3,7,3"></TextBlock>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
+
+                                <Grid Margin="3,-2,3,0">
+                                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignToolButton}">
+                                        <materialDesign:PackIcon Kind="Edit" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                    </Button>
+                                    <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolButton}">
+                                        <materialDesign:PackIcon Kind="Delete" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#ffdadada"  UseLayoutRounding="True">
+        <Border MinWidth="400" MaxWidth="700" Margin="15" Background="White" VerticalAlignment="Center" 
+                Padding="30,30,30,15" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Добавление продукта из списка" FontSize="25" FontWeight="Bold" Margin="0,0,0,3" FontFamily="Montserrat" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
+                <Border Background="Gainsboro" CornerRadius="15" Margin="1,0,1,7">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Gainsboro" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                    </Border.Effect>
+                    <StackPanel Orientation="Horizontal" Height="35"
+                                VerticalAlignment="Top" HorizontalAlignment="Left">
+                        <Button Margin="10,0,10,0" Style="{StaticResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon Kind="Search" 
+                                                     Foreground="Gray"
+                                                     Height="23" Width="23"/>
+                        </Button>
+                        <TextBox FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" Width="560" FontSize="17" Margin="0,5,0,1"></TextBox>
+                    </StackPanel>
+                </Border>
+                <Border Margin="0,5,0,0" Padding="20" Background="Gainsboro" CornerRadius="20">
+                    <ListBox x:Name="listProducts" Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineListBox}" Height="290">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <!--<ListBoxItem>
+                            Tomato 50
+                        </ListBoxItem>-->
+                    </ListBox>
+                </Border>
+
+                <Border Background="Gainsboro" CornerRadius="15" Margin="1,10,1,0">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Gainsboro" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                    </Border.Effect>
+                    <TextBox x:Name="Weight" materialDesign:HintAssist.Hint = "Грамовка"  FontFamily="Montserrat" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  FontSize="14" Margin="25,-6,25,1"/>
+                </Border>
+
+                <Button Content="Добавить" HorizontalAlignment="Center" FontSize="15" FontFamily="Montserrat SemiBold" Margin="0,15,0,0" Click="Button_AddProductForDayClick" Cursor="Hand"/>
+                <!--ItemContainerStyle="{StaticResource listBoxProduct}"-->
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Interface"
         mc:Ignorable="d"
-        Title="Авторизация" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Авторизация" Height="600" Width="900" WindowStartupLocation="CenterScreen">
     <Grid Background="#ffdadada"  UseLayoutRounding="True">
         <Border MinWidth="400" MaxWidth="550" Margin="15" Background="White" VerticalAlignment="Center" 
                 Padding="30,30,30,15" CornerRadius="20">
@@ -14,7 +14,7 @@
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 5" FontFamily="Montserrat"/>
+                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Foreground="#FF301356" Margin="0 0 0 5" FontFamily="Montserrat"/>
 
 
                 <TextBox materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>

@@ -6,15 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Interface"
         mc:Ignorable="d"
-        Title="Регистрация" Height="700" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Регистрация" Height="650" Width="1100" WindowStartupLocation="CenterScreen">
     <Grid Background="#ffdadada"  UseLayoutRounding="True">
-        <Border MinWidth="400" MaxWidth="550" Margin="15" Background="White" VerticalAlignment="Center" 
+        <Border MinWidth="400" MaxWidth="650" Margin="15" Background="White" VerticalAlignment="Center" 
                 Padding="30,30,30,15" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Регистрация" FontSize="30" FontWeight="Bold" FontFamily="Montserrat" Margin="0 0 0 5" HorizontalAlignment="Left"/>
+                <TextBlock Text="Регистрация" FontSize="30" FontWeight="Bold" FontFamily="Montserrat" Margin="0 0 0 5" HorizontalAlignment="Left" Foreground="#FF301356"/>
 
                 <TextBox materialDesign:HintAssist.Hint="Ваше имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                 <TextBox materialDesign:HintAssist.Hint="Ваш вес" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
