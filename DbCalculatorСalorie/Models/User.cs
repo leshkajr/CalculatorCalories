@@ -14,8 +14,8 @@ namespace DbCalculatorСalorie.Models
         public string Password { get; set; }
         public int Gender { get; set; }
         public int Age { get; set; }
-        public decimal Weight { get; set; }
-        public decimal Height { get; set; }
+        public double Weight { get; set; }
+        public double Height { get; set; }
         public ICollection<DietForTheDay> DietForTheDays { get; set; }
         public User()
         {
