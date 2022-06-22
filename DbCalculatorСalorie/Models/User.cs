@@ -16,5 +16,10 @@ namespace DbCalculatorСalorie.Models
         public int Age { get; set; }
         public decimal Weight { get; set; }
         public decimal Height { get; set; }
+        public ICollection<DietForTheDay> DietForTheDays { get; set; }
+        public User()
+        {
+            DietForTheDays = new List<DietForTheDay>();
+        }
     }
 }

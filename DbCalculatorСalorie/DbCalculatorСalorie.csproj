@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202206220635438_addDietForTheDay.designer.cs">
       <DependentUpon>202206220635438_addDietForTheDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206220648536_UserConnectDay.cs" />
+    <Compile Include="Migrations\202206220648536_UserConnectDay.designer.cs">
+      <DependentUpon>202206220648536_UserConnectDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DietForTheDay.cs" />
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206220635438_addDietForTheDay.resx">
       <DependentUpon>202206220635438_addDietForTheDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206220648536_UserConnectDay.resx">
+      <DependentUpon>202206220648536_UserConnectDay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,8 @@ namespace DbCalculatorСalorie.Models
     {
         public int id { get; set; }
         public DateTime Date { get; set; }
+        public int? UserId { get; set; }
+        public User User { get; set; }
         public ICollection<Product> Products { get; set; }
         public DietForTheDay()
         {
