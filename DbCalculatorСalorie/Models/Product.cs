@@ -15,5 +15,11 @@ namespace DbCalculatorСalorie.Models
         public int Carbohydrates { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
+
+        public ICollection<DietForTheDay> DietForTheDays { get; set; }
+        public Product()
+        {
+            DietForTheDays = new List<DietForTheDay>();
+        }
     }
 }
