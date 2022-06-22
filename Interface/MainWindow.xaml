@@ -12,7 +12,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="215" MouseDown="listBoxProducts_Selected">
+                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="215">
                             <!--MouseDown="Item_MouseDown"-->
                             <Border.Effect>
                                 <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
@@ -151,8 +151,7 @@
                                        FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
                                         <TextBlock Text="2300 ккал" FontSize="100"
                                        FontFamily="Montserrat Black" Foreground="#DD7B53A6" HorizontalAlignment="Center" />
-                                        <Button Content="Изменить потенциальную цель" FontFamily="Montserrat SemiBold"
-                                        Style="{StaticResource MaterialDesignRaisedButton}" Padding="159,0,159,0" Background="#DD7B53A6" HorizontalAlignment="Center" />
+                                        
                                     </StackPanel>
                                 </Border>
                                 <Grid>
@@ -165,24 +164,28 @@
                                             <StackPanel>
                                                 <TextBlock Text="Вес:" Margin="10 0 0 0" FontSize="25" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
-                                                <TextBlock Text="100 кг" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBox Text="100" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" Style="{StaticResource MaterialDesignDataGridComboBoxEditableTextBox}"/>
+                                                    <TextBlock Text="кг" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
-                                                <Button Content="Изменить" FontFamily="Montserrat SemiBold"
-                                                        Style="{StaticResource MaterialDesignRaisedButton}"
-                                                        Background="#DD7B53A6" HorizontalAlignment="Stretch"/>
+                                                </StackPanel>
+                                                
+                                                
                                             </StackPanel>
                                         </Border>
                                     </Grid>
                                     <Grid Grid.Column="1">
                                         <Border Margin="15,5,10,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
                                             <StackPanel>
-                                                <TextBlock Text="Рост:" Margin="10 0 0 0" FontSize="25"
-                                       FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
-                                                <TextBlock Text="185 см" Margin="10 0 0 0" FontSize="80"
-                                       FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
-                                                <Button Content="Изменить" FontFamily="Montserrat SemiBold"
-                                                        Style="{StaticResource MaterialDesignRaisedButton}"
-                                                        Background="#DD7B53A6" HorizontalAlignment="Stretch"/>
+                                                <TextBlock Text="Рост:" Margin="10 0 0 0" FontSize="25" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBox Text="180" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" Style="{StaticResource MaterialDesignDataGridComboBoxEditableTextBox}"/>
+                                                    <TextBlock Text="см" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
+                                                </StackPanel>
                                             </StackPanel>
                                         </Border>
                                     </Grid>
@@ -232,7 +235,7 @@
 
 
                     <ListBox Margin="10,5,10,0" x:Name="listBoxProducts" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="1"
-                             ItemContainerStyle="{StaticResource listBoxItemProduct}" Background="Transparent">
+                             ItemContainerStyle="{StaticResource listBoxItemProduct}" Background="Transparent"  SelectionChanged="listBoxProducts_Selected">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal"/>
