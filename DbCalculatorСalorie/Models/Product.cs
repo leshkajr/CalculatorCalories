@@ -13,6 +13,7 @@ namespace DbCalculatorСalorie.Models
         public int Protein { get; set; }
         public int Fats { get; set; }
         public int Carbohydrates { get; set; }
+        public double Weight { get; set; }
         public int Calories { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
