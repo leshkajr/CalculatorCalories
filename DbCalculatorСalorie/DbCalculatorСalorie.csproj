@@ -64,6 +64,14 @@
     <Compile Include="Migrations\202206220648536_UserConnectDay.designer.cs">
       <DependentUpon>202206220648536_UserConnectDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206221337043_addProductCalories.cs" />
+    <Compile Include="Migrations\202206221337043_addProductCalories.designer.cs">
+      <DependentUpon>202206221337043_addProductCalories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206221347224_addDecimalDouble.cs" />
+    <Compile Include="Migrations\202206221347224_addDecimalDouble.designer.cs">
+      <DependentUpon>202206221347224_addDecimalDouble.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DietForTheDay.cs" />
@@ -84,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206220648536_UserConnectDay.resx">
       <DependentUpon>202206220648536_UserConnectDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206221337043_addProductCalories.resx">
+      <DependentUpon>202206221337043_addProductCalories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206221347224_addDecimalDouble.resx">
+      <DependentUpon>202206221347224_addDecimalDouble.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

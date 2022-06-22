@@ -11,7 +11,7 @@ namespace Registration.Users
 {
     public class RegistrationUser
     {
-        public bool CreateUser(string name, string login, string password, int gender, int age, decimal weight, decimal height)
+        public bool CreateUser(string name, string login, string password, int gender, int age, double weight, double height)
         {
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {

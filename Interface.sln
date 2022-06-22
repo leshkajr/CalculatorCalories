@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Text.Encryptor", "Text.Encr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registration.Users", "Registration.Users\Registration.Users.csproj", "{A4BAADD4-0B27-47C0-AE34-8E5F63CCB8F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrient.Calculator", "Nutrient.Calculator\Nutrient.Calculator.csproj", "{FA2ACF3A-2DA6-474C-A769-CB784337DB7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A4BAADD4-0B27-47C0-AE34-8E5F63CCB8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4BAADD4-0B27-47C0-AE34-8E5F63CCB8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4BAADD4-0B27-47C0-AE34-8E5F63CCB8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA2ACF3A-2DA6-474C-A769-CB784337DB7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2ACF3A-2DA6-474C-A769-CB784337DB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2ACF3A-2DA6-474C-A769-CB784337DB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2ACF3A-2DA6-474C-A769-CB784337DB7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
