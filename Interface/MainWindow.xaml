@@ -13,7 +13,6 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="215">
-                            <!--MouseDown="Item_MouseDown"-->
                             <Border.Effect>
                                 <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
                             </Border.Effect>
@@ -57,45 +56,71 @@
                             </Border.Effect>
                             <Grid>
                                 <StackPanel Margin="10" HorizontalAlignment="Left">
-                                    <TextBlock Foreground="#FF4A316A" HorizontalAlignment="Left" Text="{Binding Name}" FontFamily="Montserrat ExtraBold" FontSize="45" Margin="20,0,0,0"/>
+                                    <TextBlock Foreground="#FF4A316A" HorizontalAlignment="Left" Text="{Binding Name}" FontFamily="Montserrat ExtraBold" FontSize="35" Margin="20,0,0,0"/>
 
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0">
-                                        <TextBlock Text="Калории: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="{Binding Calories}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text=" ккал" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,3,0,0">
+                                        <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                            </Border.Effect>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Ккал " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="{Binding Calories}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                            </Border.Effect>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Углеводы " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="{Binding Carbohydrates}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                            </Border.Effect>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Белки " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="{Binding Protein}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                            </Border.Effect>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Жиры " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="{Binding Fats}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            </StackPanel>
+
+                                        </Border>
+
+                                        <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                            </Border.Effect>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text=" Вес: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBox Text="{Binding Weight}" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                                <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            </StackPanel>
+                                        </Border>
                                     </StackPanel>
 
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0">
-                                        <TextBlock Text="Протеины: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="{Binding Protein}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                    </StackPanel>
-
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0">
-                                        <TextBlock Text="Жиры: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="{Binding Fats}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                    </StackPanel>
-
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0">
-                                        <TextBlock Text="Углеводы: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="{Binding Carbohydrates}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                    </StackPanel>
-
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,0,0,0">
-                                        <TextBlock Text="Вес: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBox Text="{Binding Weight}" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                        <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="25" Margin="0,1,0,0"/>
-                                    </StackPanel>
-
-                                    
                                 </StackPanel>
-
-                                <Button Style="{StaticResource MaterialDesignToolButton}" Height="55" Width="55" Margin="0,7,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                <Button Style="{StaticResource MaterialDesignToolButton}" Height="50" Width="50" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right">
                                     <materialDesign:PackIcon Kind="Delete" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
-                                                     Height="50" Width="50"/>
+                                                     Height="45" Width="45"/>
                                 </Button>
                             </Grid>
                         </Border>
@@ -253,30 +278,103 @@
                 </TabItem.Header>
 
                 <Grid Background="#FFF5ECFF">
-                    <ScrollViewer>
-                        
-                    
-                    <StackPanel>
-                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,10,20,0" MouseDown="ResetProductForDay" Height="90">
-                            <Border.Effect>
-                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
-                            </Border.Effect>
-                            <materialDesign:PackIcon Kind="Autorenew" 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="455*"/>
+                        <RowDefinition Height="129*"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Margin="0,0,0,10">
+
+
+                        <StackPanel>
+                            <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,10,20,0" MouseDown="ResetProductForDay" Height="90">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                                </Border.Effect>
+                                <materialDesign:PackIcon Kind="Autorenew" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="80" Width="90" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ListBox Margin="10" x:Name="listBoxProductsForOneDay" 
+                            </Border>
+                            <ListBox Margin="10" x:Name="listBoxProductsForOneDay" 
                              ItemContainerStyle="{StaticResource listBoxItemProductForDay}" Background="Transparent"/>
-                        <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,0,20,5" MouseDown="AddProductForDay">
-                            <Border.Effect>
-                                <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
-                            </Border.Effect>
-                            <materialDesign:PackIcon Kind="Plus" 
+                            <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,0,20,5" MouseDown="AddProductForDay">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                                </Border.Effect>
+                                <materialDesign:PackIcon Kind="Plus" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="90" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </StackPanel>
+                            </Border>
+                        </StackPanel>
                     </ScrollViewer>
+                    <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,0,20,10" VerticalAlignment="Center" Grid.Row="1" Height="114">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                        </Border.Effect>
+                        <Grid>
+                            <StackPanel Margin="10" HorizontalAlignment="Left">
+                                <TextBlock Foreground="#FF4A316A" HorizontalAlignment="Left" Text="Всего" FontFamily="Montserrat ExtraBold" FontSize="35" Margin="20,0,0,0"/>
+
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,3,0,0">
+                                    <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                        </Border.Effect>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Ккал " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                        </Border.Effect>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Углеводы " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                        </Border.Effect>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Белки " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                        </Border.Effect>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Жиры " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                        </StackPanel>
+
+                                    </Border>
+
+                                    <Border CornerRadius="10" Background="#FFCFB4EB" Margin="0,0,10,10" Padding="10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
+                                        </Border.Effect>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text=" Вес: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </Grid>
                 
             </TabItem>
