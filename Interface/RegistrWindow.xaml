@@ -16,22 +16,22 @@
             <StackPanel>
                 <TextBlock Text="Регистрация" FontSize="30" FontWeight="Bold" FontFamily="Montserrat" Margin="0 0 0 5" HorizontalAlignment="Left" Foreground="#FF301356"/>
 
-                <TextBox materialDesign:HintAssist.Hint="Ваше имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
-                <TextBox materialDesign:HintAssist.Hint="Ваш вес" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
-                <TextBox materialDesign:HintAssist.Hint="Ваш рост" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <TextBox x:Name="userName" materialDesign:HintAssist.Hint="Ваше имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <TextBox x:Name="userWeight" materialDesign:HintAssist.Hint="Ваш вес" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <TextBox x:Name="userHaight" materialDesign:HintAssist.Hint="Ваш рост" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
 
 
 
 
 
-                <TextBox materialDesign:HintAssist.Hint="Придумайте логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
-                <PasswordBox materialDesign:HintAssist.Hint="Придумайте пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
-                <PasswordBox materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
+                <TextBox x:Name="userLogin" materialDesign:HintAssist.Hint="Придумайте логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <PasswordBox x:Name="userPassword" materialDesign:HintAssist.Hint="Придумайте пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
+                <PasswordBox x:Name="userRepeatPassword" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
 
                 <GroupBox Header="Выбирете пол" Margin="0,10,0,0">
                     <StackPanel Orientation="Horizontal">
-                        <RadioButton FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Мужчина</RadioButton>
-                        <RadioButton Margin="10,0,0,0" FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Женщина</RadioButton>
+                        <RadioButton x:Name="UserGenderMan" FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Мужчина</RadioButton>
+                        <RadioButton x:Name="UserGenderWoman" Margin="10,0,0,0" FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Женщина</RadioButton>
                     </StackPanel>
                 </GroupBox>
 
