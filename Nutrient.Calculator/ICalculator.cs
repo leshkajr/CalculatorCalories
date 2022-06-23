@@ -9,6 +9,6 @@ namespace Nutrient.Calculator
 {
     public interface ICalculator
     {
-      Product NutrientCount(Product product,decimal weight,User user, DateTime date);
+      Product NutrientCount(Product product,User user, DateTime date);
     }
 }
