@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbCalculatorСalorie.Date;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,29 @@ namespace DbCalculatorСalorie.Models
         public Product()
         {
             DietForTheDays = new List<DietForTheDay>();
+        }
+
+        public void AddProduct(string name,int protein,int carbohydrates,int fats,int CategoryId)
+        {
+            using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
+            {
+                var category = db.Categories.FirstOrDefault(x => x.id == CategoryId);
+                Product newProduct = new Product() { Name = name, Protein = protein, Carbohydrates = carbohydrates, Fats = fats };
+                newProduct.Calories = (int)(protein * 4.2 + fats * 9.29 + carbohydrates * 4.2);
+                db.Products.Add(newProduct);
+                category.Products.Add(newProduct);
+                db.SaveChanges();
+            }
+        }
+
+        public void EditProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveProduct()
+        {
+            throw new NotImplementedException();
         }
     }
 }

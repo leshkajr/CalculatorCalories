@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbCalculatorСalorie.Date;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DbCalculatorСalorie.Models
 {
-    public class Category
+    public class Category:IProduct
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -14,6 +15,27 @@ namespace DbCalculatorСalorie.Models
         public Category()
         {
             Products = new List<Product>();
+        }
+
+        public void AddProduct(string name, int protein, int carbohydrates, int fats, int CategoryId)
+        {
+            using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
+            {
+                Category category = new Category();
+                category.Name = name;
+                db.Categories.Add(category);
+                db.SaveChanges();
+            }
+        }
+
+        public void EditProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveProduct()
+        {
+            throw new NotImplementedException();
         }
     }
 }
