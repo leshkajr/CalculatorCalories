@@ -34,7 +34,7 @@ namespace Interface
             }
             if (userRepeatPassword.Password.ToString()== userPassword.Password.ToString())
             {
-                if (RegistrationUser.CreateUser(userName.Text, userLogin.Text, userPassword.Password.ToString(), Gender, 20, double.Parse(userWeight.Text), double.Parse(userHaight.Text)))
+                if (RegistrationUser.CreateUser(userName.Text, userLogin.Text, userPassword.Password.ToString(), Gender,int.Parse(userAge.Text), double.Parse(userWeight.Text), double.Parse(userHaight.Text)))
                 {
                     AuthWindow authWindow = new AuthWindow();
                     authWindow.Show();
