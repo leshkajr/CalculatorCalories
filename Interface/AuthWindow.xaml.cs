@@ -45,7 +45,7 @@ namespace Interface
             }
             else
             {
-
+                MessageBox.Show("Неправильный пароль или логин", "Ошибка");
             }
 
 
