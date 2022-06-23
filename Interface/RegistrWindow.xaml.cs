@@ -42,12 +42,12 @@ namespace Interface
                 }
                 else
                 {
-
+                    MessageBox.Show("Такой пользователь уже существует","Ошибка");
                 }
             }
             else
             {
-
+                MessageBox.Show("Пароли не совпадают", "Ошибка");
             }
            
         }
