@@ -17,8 +17,8 @@
                 <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Foreground="#FF301356" Margin="0 0 0 5" FontFamily="Montserrat"/>
 
 
-                <TextBox materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
-                <PasswordBox materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
+                <TextBox x:Name="userLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <PasswordBox x:Name="userPassword" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Montserrat Medium"/>
                 <Button Content="Авторизоваться" Margin="0,20,0,0" FontFamily="Montserrat" Click="Button_Auth_Click"/>
                 <TextBlock HorizontalAlignment="Center" Text="Регистрация" FontFamily="Montserrat" Margin="0,5,0,0" 
                             Foreground="{StaticResource PrimaryHueMidBrush}" MouseDown="Button_Registr_Click"/>

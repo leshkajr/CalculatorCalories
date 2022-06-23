@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Authorization.Users;
+using DbCalculatorСalorie.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,11 +35,20 @@ namespace Interface
 
         private void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow window = new MainWindow();
-            // Добавление информации в основное окно
+            User user = AuthorizationUser.PasswordCheckAsync(userLogin.Text, userPassword.Password.ToString());
+            if (user != null)
+            {
+                MainWindow window = new MainWindow();
+                // Добавление информации в основное окно
+                window.Show();
+                this.Close();
+            }
+            else
+            {
 
-            window.Show();
-            this.Close();
+            }
+
+
         }
     }
 }
