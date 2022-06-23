@@ -17,6 +17,7 @@
                 <TextBlock Text="Регистрация" FontSize="30" FontWeight="Bold" FontFamily="Montserrat" Margin="0 0 0 5" HorizontalAlignment="Left" Foreground="#FF301356"/>
 
                 <TextBox x:Name="userName" materialDesign:HintAssist.Hint="Ваше имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <TextBox x:Name="userAge" materialDesign:HintAssist.Hint="Ваш возраст" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                 <TextBox x:Name="userWeight" materialDesign:HintAssist.Hint="Ваш вес" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                 <TextBox x:Name="userHaight" materialDesign:HintAssist.Hint="Ваш рост" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
 
