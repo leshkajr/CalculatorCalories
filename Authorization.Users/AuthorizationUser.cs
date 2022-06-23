@@ -12,7 +12,7 @@ namespace Authorization.Users
 {
     public class AuthorizationUser
     {
-        public User PasswordCheckAsync(string login,string password)
+        public static User PasswordCheckAsync(string login,string password)
         {
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {

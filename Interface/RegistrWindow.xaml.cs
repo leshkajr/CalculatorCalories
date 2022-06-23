@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Registration.Users;
+using System.Windows;
 
 namespace Interface
 {
@@ -22,10 +23,33 @@ namespace Interface
 
         private void Button_Registr_Click(object sender, RoutedEventArgs e) // Регистрация
         {
-            // Переход на окно авторизации
-            AuthWindow authWindow = new AuthWindow();
-            authWindow.Show();
-            this.Close();
+            int Gender = 0;
+            if(UserGenderMan.IsChecked==true)
+            {
+                Gender = 1;
+            }
+            else
+            {
+                Gender = 0;
+            }
+            if (userRepeatPassword.Password.ToString()== userPassword.Password.ToString())
+            {
+                if (RegistrationUser.CreateUser(userName.Text, userLogin.Text, userPassword.Password.ToString(), Gender, 20, double.Parse(userWeight.Text), double.Parse(userHaight.Text)))
+                {
+                    AuthWindow authWindow = new AuthWindow();
+                    authWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+           
         }
     }
 }
