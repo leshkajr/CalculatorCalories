@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Search
+namespace Products.Search
 {
     public class SearchProduct : ISearchProduct
     {
@@ -14,46 +14,25 @@ namespace Search
         {
             name = name.ToLower();
 
-            CalculatorСalorieDbContext db = new CalculatorСalorieDbContext();
-            List<Product> products = new List<Product>();
-            if (name.Trim() != "")
+            using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {
-                foreach (Product product in db.Products)
+                List<Product> products = new List<Product>();
+                if (name.Trim() != "")
                 {
-                    if (product.Name.ToLower().Contains(name))
+                    foreach (Product product in db.Products)
                     {
-                        products.Add(product);
+                        if (product.Name.ToLower().Contains(name))
+                        {
+                            products.Add(product);
+                        }
                     }
+                    return products;
                 }
-                return products;
+                else
+                {
+                    return db.Products.ToList();
+                }
             }
-            else
-            {
-                return db.Products.ToList();
-            }
-
-
-            //List<Product> db = new List<Product>(){
-            //    new Product("Помидор",300),
-            //    new Product("Картошка",20),
-            //};
-
-            //List<Product> products = new List<Product>();
-            //if (name.Trim() != "")
-            //{
-            //    foreach (Product product in db)
-            //    {
-            //        if (product.Name.ToLower().Contains(name))
-            //        {
-            //            products.Add(product);
-            //        }
-            //    }
-            //    return products;
-            //}
-            //else
-            //{
-            //    return db;
-            //}
         }  
     }
 }

@@ -250,8 +250,8 @@
                                 </Button>
                                 <TextBox x:Name="searchTextBox" FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" 
                                          Width="250" FontSize="17" Margin="0,5,0,0" TextChanged="Search_TextChanged"/>
-                                <ComboBox x:Name="categories" materialDesign:HintAssist.Hint="Категория" Margin="20,1,20,0" Padding="10,0,10,0"
-                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" FontSize="14">
+                                <ComboBox x:Name="categoriesList" materialDesign:HintAssist.Hint="Категория" Margin="20,1,20,0" Padding="10,0,10,0"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" FontSize="14" SelectionChanged="categories_SelectionChanged">
                                 </ComboBox>
                             </StackPanel>
 
