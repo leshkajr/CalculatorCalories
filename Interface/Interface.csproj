@@ -18,14 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.6" />
     <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Authorization.Users\Authorization.Users.csproj" />
+    <ProjectReference Include="..\Nutrient.Calculator\Nutrient.Calculator.csproj" />
     <ProjectReference Include="..\Registration.Users\Registration.Users.csproj" />
+    <ProjectReference Include="..\SearchProduct\SearchProduct.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,40 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DbCalculatorСalorie.Models;
+using Search;
 
 namespace Interface
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public class Product
-    {
-        public string Name { get; set; }
-        public int Calories { get; set; }
-        public int Protein { get; set; }
-        public int Fats { get; set; }
-        public int Carbohydrates { get; set; }
-        public Product()
-        {
-            this.Name = "";
-            this.Calories = 0;
-        }
-        public Product(string name, int calories)
-        {
-            this.Name = name;
-            this.Calories = calories;
-        }
-
-        //public override string ToString()
-        //{
-        //    return Name + " " + Calories + " ккал";
-        //}
-    }
-
-    public class ProductDay : Product
-    {
-        public int Weight { get; set; }
-    }
     public partial class MainWindow : Window
     {
         List<Product> list = new List<Product>();
@@ -53,63 +27,76 @@ namespace Interface
         {
             InitializeComponent();
 
-            list = new List<Product>()
-            {
-                new Product("Tomato",300),
-                new Product("Potato",20),
-            };
+            //list = new List<Product>()
+            //{
+            //    new Product("Помидор",300),
+            //    new Product("Картошка",20),
+            //};
             listBoxProducts.ItemsSource = list;
+
+            categories.Items.Add("Все");
+            categories.Items.Add("Молочные продукты");
         }
-        private void Button_AddProduct(object sender, RoutedEventArgs e) // Добавление продукта в общий список
+        private void Button_AddProduct(object sender, RoutedEventArgs e) // Добавление продукта в категорию
         {
             AddProduct window_AddProduct = new AddProduct();
+            window_AddProduct.categories.ItemsSource = categories.Items;
+
+            window_AddProduct.categories.SelectedItem = window_AddProduct.categories.Items[0];
             window_AddProduct.ShowDialog();
+        }
+
+        private void Button_AddCategory(object sender, RoutedEventArgs e) // Добавление категории
+        {
+            AddCategory window_AddCategory = new AddCategory();
+            window_AddCategory.ShowDialog();
         }
 
         private void AddProductForDay(object sender, MouseButtonEventArgs e) // Добавление продукта в дневной рацион
         {
             AddProductFromList window_AddProductFromList = new AddProductFromList();
+            window_AddProductFromList.list = list;
             window_AddProductFromList.listProducts.ItemsSource = listBoxProducts.ItemsSource;
             window_AddProductFromList.ShowDialog();
 
 
-            Task.Run(() =>
-            {
-                bool Is = false;
-                ProductDay productDay = new ProductDay();
-                while (Is == false)
-                {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        try
-                        {
-                            if (window_AddProductFromList.IsClose == true)
-                            {
-                                productDay.Name = ((Product)window_AddProductFromList.listProducts.SelectedItem).Name;
-                                productDay.Weight = Convert.ToInt32(window_AddProductFromList.Weight.Text);
-                                Is = true;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                            Is = true;
-                        }
-                        
-                    });
-                }
-                for (int i = 0; i < list.Count; i++)
-                {
-                    if (productDay.Name == list[i].Name)
-                    {
-                        productDay.Protein = list[i].Protein;
-                        productDay.Fats = list[i].Fats;
-                        productDay.Carbohydrates = list[i].Carbohydrates;
-                        productDay.Calories = list[i].Calories;
-                        this.Dispatcher.Invoke(() => { listBoxProductsForOneDay.Items.Add(productDay); });
-                    }
-                }
-            });
+            //Task.Run(() =>
+            //{
+            //    bool Is = false;
+            //    DietForTheDay productDay = new DietForTheDay();
+            //    while (Is == false)
+            //    {
+            //        this.Dispatcher.Invoke(() =>
+            //        {
+            //            try
+            //            {
+            //                if (window_AddProductFromList.IsClose == true)
+            //                {
+            //                    productDay.Name = ((Product)window_AddProductFromList.listProducts.SelectedItem).Name;
+            //                    productDay.Weight = Convert.ToInt32(window_AddProductFromList.Weight.Text);
+            //                    Is = true;
+            //                }
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                MessageBox.Show(ex.Message);
+            //                Is = true;
+            //            }
+
+            //        });
+            //    }
+            //    for (int i = 0; i < list.Count; i++)
+            //    {
+            //        if (productDay.Name == list[i].Name)
+            //        {
+            //            productDay.Protein = list[i].Protein;
+            //            productDay.Fats = list[i].Fats;
+            //            productDay.Carbohydrates = list[i].Carbohydrates;
+            //            productDay.Calories = list[i].Calories;
+            //            this.Dispatcher.Invoke(() => { listBoxProductsForOneDay.Items.Add(productDay); });
+            //        }
+            //    }
+            //});
         }
 
 
@@ -143,6 +130,15 @@ namespace Interface
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchProduct searchProduct = new SearchProduct();
+            List<Product> product = searchProduct.Search(searchTextBox.Text);
+            list = product;
+            listBoxProducts.ItemsSource = list;
+            //product.
         }
     }
 }

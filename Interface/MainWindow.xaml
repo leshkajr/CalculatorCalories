@@ -13,6 +13,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="215">
+                            <!--MouseDown="Item_MouseDown"-->
                             <Border.Effect>
                                 <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
                             </Border.Effect>
@@ -168,7 +169,7 @@
                                     </StackPanel>
                                 </Border>
                             </Grid>
-                            
+
                             <StackPanel>
                                 <Border Margin="15,5,10,15" Padding="20" Background="#FFDEC1FD" CornerRadius="20">
                                     <StackPanel>
@@ -176,7 +177,7 @@
                                        FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
                                         <TextBlock Text="2300 ккал" FontSize="100"
                                        FontFamily="Montserrat Black" Foreground="#DD7B53A6" HorizontalAlignment="Center" />
-                                        
+
                                     </StackPanel>
                                 </Border>
                                 <Grid>
@@ -195,8 +196,8 @@
                                                     <TextBlock Text="кг" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
                                                 </StackPanel>
-                                                
-                                                
+
+
                                             </StackPanel>
                                         </Border>
                                     </Grid>
@@ -217,10 +218,10 @@
                                 </Grid>
 
                             </StackPanel>
-                            
+
                         </StackPanel>
                     </ScrollViewer>
-                    
+
                 </Grid>
             </TabItem>
             <TabItem>
@@ -231,6 +232,7 @@
                 </TabItem.Header>
                 <Grid Background="#FFF5ECFF">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
@@ -246,20 +248,51 @@
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
                                 </Button>
-                                <TextBox FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" Width="250" FontSize="17" Margin="0,5,0,0"></TextBox>
+                                <TextBox x:Name="searchTextBox" FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" 
+                                         Width="250" FontSize="17" Margin="0,5,0,0" TextChanged="Search_TextChanged"/>
+                                <ComboBox x:Name="categories" materialDesign:HintAssist.Hint="Категория" Margin="20,1,20,0" Padding="10,0,10,0"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="250" FontSize="14">
+                                </ComboBox>
                             </StackPanel>
 
-                            <Button Margin="0,0,17,0" Style="{StaticResource MaterialDesignToolButton}" 
-                                    HorizontalAlignment="Right" Click="Button_AddProduct">
-                                <materialDesign:PackIcon Kind="Plus" 
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button Margin="0,0,17,0" Style="{StaticResource MaterialDesignFlatLightButton}" 
+                                    Click="Button_AddProduct" Padding="5,0,5,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Plus" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
-                            </Button>
+                                        <TextBlock Text="Продукт" Margin="4,2,4,0"/>
+                                        
+                                    </StackPanel>
+                                    
+                                </Button>
+                                <Button Margin="0,0,17,0" Style="{StaticResource MaterialDesignFlatLightButton}" 
+                                     Padding="5,0,5,0" Click="Button_AddCategory">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Plus" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                        <TextBlock Text="Категория" Margin="4,2,4,0"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
                         </Grid>
                     </Border>
 
+                    <!--<Border Background="#FFE7D7F7" CornerRadius="15" Margin="10,5,10,0" Grid.Row="1">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
+                        </Border.Effect>
+                        <ComboBox Grid.Row="1" materialDesign:HintAssist.Hint="Категория"  Margin="20,0,20,0" Padding="10,0,0,0"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                        </ComboBox>
+                    </Border>-->
+                    
 
-                    <ListBox Margin="10,5,10,0" x:Name="listBoxProducts" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="1"
+                    <ListBox Margin="10,5,10,0" x:Name="listBoxProducts" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="2"
                              ItemContainerStyle="{StaticResource listBoxItemProduct}" Background="Transparent"  SelectionChanged="listBoxProducts_Selected">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -376,11 +409,11 @@
                         </Grid>
                     </Border>
                 </Grid>
-                
+
             </TabItem>
         </TabControl>
 
-       
+
 
     </Grid>
 </Window>

@@ -17,14 +17,18 @@
                 <TextBlock Text="Добавление продукта" FontSize="30" FontWeight="Bold" Margin="0 0 0 5" FontFamily="Montserrat" Foreground="#FF4A316A"/>
 
 
-                <TextBox x:Name="productName" materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <TextBox materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                <ComboBox x:Name="categories" materialDesign:HintAssist.Hint="Категория"
+                                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+               
+                
 
                 <GroupBox Header="На 100г" Margin="0,10,0,0" FontFamily="Montserrat">
                     <StackPanel>
-                        <TextBox x:Name="productCalories" materialDesign:HintAssist.Hint="Ккал" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium" Margin="0,-7,0,0"/>
-                        <TextBox x:Name="productProtein" materialDesign:HintAssist.Hint="Белок" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
-                        <TextBox x:Name="productCarbohydrates" materialDesign:HintAssist.Hint="Угли" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
-                        <TextBox x:Name="Fat" materialDesign:HintAssist.Hint="Жиры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                        <TextBox materialDesign:HintAssist.Hint="Ккал" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium" Margin="0,-7,0,0"/>
+                        <TextBox materialDesign:HintAssist.Hint="Белок" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                        <TextBox materialDesign:HintAssist.Hint="Углeводы" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
+                        <TextBox materialDesign:HintAssist.Hint="Жиры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                     </StackPanel>
                 </GroupBox>
 
