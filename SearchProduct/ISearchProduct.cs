@@ -1,13 +1,9 @@
-﻿using System;
+﻿using DbCalculatorСalorie.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DbCalculatorСalorie.Models;
 
-namespace Search
+namespace Products.Search
 {
-    internal interface ISearchProduct
+    public interface ISearchProduct
     {
         List<Product> Search(string name);
     }

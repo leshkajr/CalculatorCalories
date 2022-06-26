@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nutrient.Calculator", "Nutr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interface", "Interface\Interface.csproj", "{6F06C46A-3B48-4658-9BA0-7CF1DC2AAFA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchProduct", "SearchProduct\SearchProduct.csproj", "{C9D8E2E6-CA07-4E48-B21F-CACDF95E2CD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products.Search", "SearchProduct\Products.Search.csproj", "{C9D8E2E6-CA07-4E48-B21F-CACDF95E2CD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

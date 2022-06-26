@@ -1,19 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DbCalculatorСalorie.Models;
-using Search;
 
 namespace Interface
 {
@@ -27,11 +17,8 @@ namespace Interface
         {
             InitializeComponent();
 
-            //list = new List<Product>()
-            //{
-            //    new Product("Помидор",300),
-            //    new Product("Картошка",20),
-            //};
+            SearchCategory searchCategory = new SearchCategory();
+            
             listBoxProducts.ItemsSource = list;
 
             categories.Items.Add("Все");
@@ -139,6 +126,11 @@ namespace Interface
             list = product;
             listBoxProducts.ItemsSource = list;
             //product.
+        }
+
+        private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

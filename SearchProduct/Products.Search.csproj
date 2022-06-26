@@ -7,8 +7,8 @@
     <ProjectGuid>{C9D8E2E6-CA07-4E48-B21F-CACDF95E2CD5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SearchProduct</RootNamespace>
-    <AssemblyName>SearchProduct</AssemblyName>
+    <RootNamespace>Products.Search</RootNamespace>
+    <AssemblyName>Products.Search</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -49,12 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISearchProduct.cs" />
+    <Compile Include="SearchCategory.cs" />
     <Compile Include="SearchProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DbCalculatorСalorie\DbCalculatorСalorie.csproj">
-      <Project>{7baa750b-28ea-48b4-b0cc-38a1c924d2a2}</Project>
+      <Project>{7BAA750B-28EA-48B4-B0CC-38A1C924D2A2}</Project>
       <Name>DbCalculatorСalorie</Name>
     </ProjectReference>
   </ItemGroup>
