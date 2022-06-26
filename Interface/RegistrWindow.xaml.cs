@@ -24,7 +24,7 @@ namespace Interface
         private void Button_Registr_Click(object sender, RoutedEventArgs e) // Регистрация
         {
             int Gender = 0;
-            if(UserGenderMan.IsChecked==true)
+            if (UserGenderMan.IsChecked == true)
             {
                 Gender = 1;
             }
@@ -34,7 +34,8 @@ namespace Interface
             }
             if (userRepeatPassword.Password.ToString() == userPassword.Password.ToString())
             {
-                if (RegistrationUser.CreateUser(userName.Text, userLogin.Text, userPassword.Password.ToString(), Gender,int.Parse(userAge.Text), double.Parse(userWeight.Text), double.Parse(userHaight.Text)))
+                
+                if (RegistrationUser.CreateUser(userName.Text, userLogin.Text, userPassword.Password.ToString(), Gender, int.Parse(userAge.Text), double.Parse(userWeight.Text), double.Parse(userHaight.Text)))
                 {
                     AuthWindow authWindow = new AuthWindow();
                     authWindow.Show();
@@ -42,14 +43,14 @@ namespace Interface
                 }
                 else
                 {
-                    MessageBox.Show("Такой пользователь уже существует","Ошибка");
+                    MessageBox.Show("Такой пользователь уже существует", "Ошибка");
                 }
             }
             else
             {
                 MessageBox.Show("Пароли не совпадают", "Ошибка");
             }
-           
+
         }
     }
 }

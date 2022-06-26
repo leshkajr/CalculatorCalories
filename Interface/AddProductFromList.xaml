@@ -65,19 +65,54 @@
                                                      Foreground="Gray"
                                                      Height="23" Width="23"/>
                         </Button>
-                        <TextBox FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}" Width="560" FontSize="17" Margin="0,5,0,1"></TextBox>
+                        <TextBox x:Name="searchTextBox" FontFamily="Montserrat Medium" Style="{StaticResource MaterialDesignTextBoxBase}"
+                                 Width="560" FontSize="17" Margin="0,5,0,1" TextChanged="Search_TextChanged"/>
                     </StackPanel>
                 </Border>
                 <Border Margin="0,5,0,0" Padding="20" Background="Gainsboro" CornerRadius="20">
-                    <ListBox x:Name="listProducts" Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineListBox}" Height="290">
+                    <ListBox x:Name="listProducts" Style="{StaticResource MaterialDesignNavigationListBox}" Height="290">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding Name}" Foreground="DimGray" FontFamily="Montserrat SemiBold" FontSize="16" Margin="15,0,0,0"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border BorderBrush="#FF9D9D9D" BorderThickness="1" CornerRadius="10" Margin="5,1,0,1" Padding="7,1,7,1">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Белки: " Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="{Binding Protein}" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="г/100г" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border BorderBrush="#FF9D9D9D" BorderThickness="1" CornerRadius="10" Margin="3,1,0,1" Padding="5,1,5,1">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Жиры: " Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="{Binding Fats}" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="г/100г" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border BorderBrush="#FF9D9D9D" BorderThickness="1" CornerRadius="10" Margin="3,1,0,1" Padding="5,1,5,1">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Углеводы: " Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="{Binding Carbohydrates}" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="г/100г" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border BorderBrush="#FF9D9D9D" BorderThickness="1" CornerRadius="10" Margin="3,1,0,1" Padding="5,1,5,1">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="Калорий: " Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="{Binding Calories}" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                                <TextBlock Text="г/100г" Foreground="DimGray" FontFamily="Montserrat" FontSize="13"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+
+
+                                </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
-                        <!--<ListBoxItem>
-                            Tomato 50
-                        </ListBoxItem>-->
                     </ListBox>
                 </Border>
 

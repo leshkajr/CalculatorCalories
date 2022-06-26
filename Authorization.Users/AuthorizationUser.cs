@@ -1,11 +1,6 @@
 ﻿using DbCalculatorСalorie.Date;
 using DbCalculatorСalorie.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Text.Encryptor;
 
 namespace Authorization.Users

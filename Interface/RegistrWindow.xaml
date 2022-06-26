@@ -32,7 +32,7 @@
                 <GroupBox Header="Выбирете пол" Margin="0,10,0,0">
                     <StackPanel Orientation="Horizontal">
                         <RadioButton x:Name="UserGenderMan" FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Мужчина</RadioButton>
-                        <RadioButton x:Name="UserGenderWoman" Margin="10,0,0,0" FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Женщина</RadioButton>
+                        <RadioButton Margin="10,0,0,0" FontFamily="Montserrat Medium" Foreground="Gray" FontSize="13">Женщина</RadioButton>
                     </StackPanel>
                 </GroupBox>
 
