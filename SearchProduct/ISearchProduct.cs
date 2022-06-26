@@ -5,6 +5,6 @@ namespace Products.Search
 {
     public interface ISearchProduct
     {
-        List<Product> Search(string name);
+        List<Product> Search(string name,int categoryId);
     }
 }

@@ -10,29 +10,63 @@ namespace Products.Search
 {
     public class SearchProduct : ISearchProduct
     {
-        public List<Product> Search(string name)
+        public List<Product> Search(string name, int categoryId)
         {
-            name = name.ToLower();
+            if (name != null)
+            {
+                name = name.ToLower();
+            }
+            else
+            {
+                name = "Все";
+            }
 
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {
-                List<Product> products = new List<Product>();
-                if (name.Trim() != "")
+                var categori = db.Categories.FirstOrDefault(x => x.id == categoryId);
+                var products = new List<Product>();
+
+
+                if(categori!=null)
                 {
-                    foreach (Product product in db.Products)
+                    if(name.Trim()!="")
                     {
-                        if (product.Name.ToLower().Contains(name))
+                        if(categori.Name=="Все")
                         {
-                            products.Add(product);
+                            products = db.Products.Where(x => x.CategoryId != null).ToList();
+                            products = products.Where(c => c.Name.ToLower().Contains(name)).ToList();
                         }
+                        else if(categori.id > 0)
+                        {
+                            products = db.Products.Where(x => x.CategoryId == categori.id).ToList();
+                            products = products.Where(c => c.Name.ToLower().Contains(name)).ToList();
+                        }
+                       
+                    }
+                    else if (categori.id > 0 && categori.Name != "Все")
+                    {
+                        products = db.Products.Where(x => x.CategoryId == categori.id).ToList();
+                    }
+                    else
+                    {
+                        products = db.Products.Where(x => x.CategoryId != null).ToList();
                     }
                     return products;
                 }
                 else
                 {
-                    return db.Products.ToList();
+                    if (name.Trim() != "")
+                    {
+                        products = db.Products.Where(x => x.CategoryId != null).ToList();
+                    }
+                    else
+                    {
+                        products = db.Products.Where(x => x.CategoryId != null).ToList();
+                        products = products.Where(c => c.Name.ToLower().Contains(name)).ToList();
+                    }
+                    return products;
                 }
             }
-        }  
+        }
     }
 }
