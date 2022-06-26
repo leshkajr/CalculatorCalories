@@ -16,10 +16,6 @@ namespace Products.Search
             {
                 name = name.ToLower();
             }
-            else
-            {
-                name = "Все";
-            }
 
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {
