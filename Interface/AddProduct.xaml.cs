@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DbCalculatorСalorie.Models;
+using Products.Search;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Interface
 {
@@ -22,10 +12,17 @@ namespace Interface
         public AddProduct()
         {
             InitializeComponent();
+            SearchCategory serch = new SearchCategory();
+            categories.ItemsSource = serch.Search();
         }
 
         private void Button_AddClick(object sender, RoutedEventArgs e)
         {
+            Product addProducts = new Product();
+            if (categories.ItemsSource != null)
+            {
+                addProducts.AddProduct(productName.Text, int.Parse(productProtein.Text), int.Parse(productCarb.Text), int.Parse(productFats.Text), (categories.SelectedItem as Category).id);
+            }
             this.Close();
         }
     }

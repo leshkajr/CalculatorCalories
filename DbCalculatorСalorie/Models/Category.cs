@@ -16,6 +16,11 @@ namespace DbCalculatorСalorie.Models
         {
             Products = new List<Product>();
         }
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
+
 
         public void AddProduct(string name, int protein, int carbohydrates, int fats, int CategoryId)
         {
