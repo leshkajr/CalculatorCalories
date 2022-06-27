@@ -53,6 +53,7 @@
     <Compile Include="SearchProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchProductFilter.cs" />
+    <Compile Include="SerchDiertForTheDay.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DbCalculatorСalorie\DbCalculatorСalorie.csproj">

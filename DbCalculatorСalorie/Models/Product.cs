@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DbCalculatorСalorie.Models
 {
-    public class Product:IProduct
+    public class Product
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -18,12 +18,8 @@ namespace DbCalculatorСalorie.Models
         public int Calories { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
-
-        public ICollection<DietForTheDay> DietForTheDays { get; set; }
-        public Product()
-        {
-            DietForTheDays = new List<DietForTheDay>();
-        }
+        public int? DietForTheDayId { get; set; }
+        public DietForTheDay DietForTheDay { get; set; }
 
         public void AddProduct(string name,int protein,int carbohydrates,int fats,int CategoryId,Product product)
         {
@@ -36,16 +32,6 @@ namespace DbCalculatorСalorie.Models
                 category.Products.Add(newProduct);
                 db.SaveChanges();
             }
-        }
-
-        public void EditProduct()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveProduct()
-        {
-            throw new NotImplementedException();
         }
     }
 }
