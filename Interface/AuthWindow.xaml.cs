@@ -27,7 +27,7 @@ namespace Interface
             User user = AuthorizationUser.PasswordCheckAsync(userLogin.Text, userPassword.Password.ToString());
             if (user != null)
             {
-                MainWindow window = new MainWindow();
+                MainWindow window = new MainWindow(user);
                 // Добавление информации в основное окно
                 window.Show();
                 this.Close();

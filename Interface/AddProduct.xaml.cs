@@ -21,7 +21,7 @@ namespace Interface
             Product addProducts = new Product();
             if (categories.ItemsSource != null)
             {
-                addProducts.AddProduct(productName.Text, int.Parse(productProtein.Text), int.Parse(productCarb.Text), int.Parse(productFats.Text), (categories.SelectedItem as Category).id);
+                addProducts.AddProduct(productName.Text, int.Parse(productProtein.Text), int.Parse(productCarb.Text), int.Parse(productFats.Text), (categories.SelectedItem as Category).id,null);
             }
             this.Close();
         }

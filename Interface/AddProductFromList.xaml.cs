@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Controller;
 using DbCalculatorСalorie.Models;
-using Search;
+using Products.Search;
 
 namespace Interface
 {
@@ -22,14 +12,22 @@ namespace Interface
     public partial class AddProductFromList : Window
     {
         public bool IsClose = false;
-        public List<Product> list = new List<Product>();
-        public AddProductFromList()
+        DietForTheDay dietForTheDay = new DietForTheDay();
+        SearchProductFilter searchProduct = new SearchProductFilter();
+        User user;
+        public AddProductFromList(User user)
         {
             InitializeComponent();
+            this.user = user;
+            listProducts.ItemsSource = searchProduct.Search(searchTextBox.Text);
         }
 
         private void Button_AddProductForDayClick(object sender, RoutedEventArgs e)
         {
+            Product newProduct=listProducts.SelectedItem as Product;
+            newProduct.Weight = int.Parse(Weight.Text);
+            AddDietForTheDay addDietForTheDay = new AddDietForTheDay();
+            addDietForTheDay.AddProduct("", 0, 0, 0, 0, newProduct, user);
             if(Weight.Text.Trim() != "")
             {
                 IsClose = true;
@@ -40,10 +38,7 @@ namespace Interface
 
         private void Search_TextChanged(object sender, TextChangedEventArgs e)
         {
-            SearchProduct searchProduct = new SearchProduct();
-            List<Product> product = searchProduct.Search(searchTextBox.Text);
-            list = product;
-            listProducts.ItemsSource = list;
+            listProducts.ItemsSource = searchProduct.Search(searchTextBox.Text);
         }
     }
 }

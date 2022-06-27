@@ -15,12 +15,13 @@ namespace Interface
     {
         SearchCategory searchCategory = new SearchCategory();
         SearchProduct SearchProduct = new SearchProduct();
-        public MainWindow()
+        User user;
+        public MainWindow(User user)
         {
             InitializeComponent();
             categoriesList.ItemsSource = searchCategory.Search();
             listBoxProducts.ItemsSource = SearchProduct.Search("",0);
-
+            this.user = user;
 
         }
         private void Button_AddProduct(object sender, RoutedEventArgs e) // Добавление продукта в категорию
@@ -42,51 +43,10 @@ namespace Interface
 
         private void AddProductForDay(object sender, MouseButtonEventArgs e) // Добавление продукта в дневной рацион
         {
-            AddProductFromList window_AddProductFromList = new AddProductFromList();
-            //window_AddProductFromList.list = list;
+            AddProductFromList window_AddProductFromList = new AddProductFromList(user);
             window_AddProductFromList.listProducts.ItemsSource = listBoxProducts.ItemsSource;
-            window_AddProductFromList.ShowDialog();
-
-
-            //Task.Run(() =>
-            //{
-            //    bool Is = false;
-            //    DietForTheDay productDay = new DietForTheDay();
-            //    while (Is == false)
-            //    {
-            //        this.Dispatcher.Invoke(() =>
-            //        {
-            //            try
-            //            {
-            //                if (window_AddProductFromList.IsClose == true)
-            //                {
-            //                    productDay.Name = ((Product)window_AddProductFromList.listProducts.SelectedItem).Name;
-            //                    productDay.Weight = Convert.ToInt32(window_AddProductFromList.Weight.Text);
-            //                    Is = true;
-            //                }
-            //            }
-            //            catch (Exception ex)
-            //            {
-            //                MessageBox.Show(ex.Message);
-            //                Is = true;
-            //            }
-
-            //        });
-            //    }
-            //    for (int i = 0; i < list.Count; i++)
-            //    {
-            //        if (productDay.Name == list[i].Name)
-            //        {
-            //            productDay.Protein = list[i].Protein;
-            //            productDay.Fats = list[i].Fats;
-            //            productDay.Carbohydrates = list[i].Carbohydrates;
-            //            productDay.Calories = list[i].Calories;
-            //            this.Dispatcher.Invoke(() => { listBoxProductsForOneDay.Items.Add(productDay); });
-            //        }
-            //    }
-            //});
+            window_AddProductFromList.ShowDialog();         
         }
-
 
         private void ResetProductForDay(object sender, MouseButtonEventArgs e) // Удаление всех продуктов из дневного рациона
         {
@@ -119,7 +79,6 @@ namespace Interface
             }
             
         }
-
         private void Search_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchProduct searchProduct = new SearchProduct();
@@ -135,7 +94,6 @@ namespace Interface
             //listBoxProducts.ItemsSource = list;
             //product.
         }
-
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
                listBoxProducts.ItemsSource = SearchProduct.Search(searchTextBox.Text,(categoriesList.SelectedItem as Category).id);
