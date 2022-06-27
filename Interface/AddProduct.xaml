@@ -25,7 +25,6 @@
 
                 <GroupBox Header="На 100г" Margin="0,10,0,0" FontFamily="Montserrat">
                     <StackPanel>
-                        <TextBox x:Name="productCalories" materialDesign:HintAssist.Hint="Ккал" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium" Margin="0,-7,0,0"/>
                         <TextBox x:Name="productProtein" materialDesign:HintAssist.Hint="Белок" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                         <TextBox x:Name="productCarb" materialDesign:HintAssist.Hint="Углeводы" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>
                         <TextBox x:Name="productFats" materialDesign:HintAssist.Hint="Жиры" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Montserrat Medium"/>

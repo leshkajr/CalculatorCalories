@@ -39,10 +39,9 @@ namespace Interface
         private void Button_AddProduct(object sender, RoutedEventArgs e) // Добавление продукта в категорию
         {
             AddProduct window_AddProduct = new AddProduct();
-            //window_AddProduct.categories.ItemsSource = categories.Items;
-
             window_AddProduct.categories.SelectedItem = window_AddProduct.categories.Items[0];
             window_AddProduct.ShowDialog();
+            listBoxProducts.ItemsSource = searchProduct.Search("", 0);
         }
 
         private void Button_AddCategory(object sender, RoutedEventArgs e) // Добавление категории
@@ -167,6 +166,14 @@ namespace Interface
                 nutritionProducts = countingCaloriesWeightLoss.NutrientCount(null, user, new DateTime());
             }
             CaloriesWeght.Text = nutritionProducts.Calories.ToString();
+            proteinWeight.Text = nutritionProducts.Protein.ToString();
+            carbnWeight.Text= nutritionProducts.Carbohydrates.ToString();
+            FatWeight.Text= nutritionProducts.Fats.ToString();
+        }
+
+        private void Delete_ProductDay(object sender, RoutedEventArgs e)
+        {
+           var a = listBoxProductsForOneDay.SelectedItem;
         }
     }
 }

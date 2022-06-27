@@ -118,7 +118,7 @@
                                     </StackPanel>
 
                                 </StackPanel>
-                                <Button Style="{StaticResource MaterialDesignToolButton}" Height="50" Width="50" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Button Style="{StaticResource MaterialDesignToolButton}" Height="50" Width="50" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Delete_ProductDay">
                                     <materialDesign:PackIcon Kind="Delete" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="45" Width="45"/>
@@ -177,7 +177,33 @@
                                        FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
                                         <TextBlock x:Name="CaloriesWeght" Text="2300 ккал" FontSize="100"
                                        FontFamily="Montserrat Black" Foreground="#DD7B53A6" HorizontalAlignment="Center" />
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
+                                            <Border BorderBrush="#FF8D6B9E" Background="#FFCDADF4" BorderThickness="2" CornerRadius="10" Margin="5,1,4,1" Padding="7,1,7,1">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock  Text="Белки: " Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                    <TextBlock x:Name="proteinWeight" Text="120" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                    <TextBlock Text="г" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                </StackPanel>
+                                            </Border>
+
+                                            <Border BorderBrush="#FF8D6B9E" Background="#FFCDADF4" BorderThickness="2" CornerRadius="10" Margin="3,1,4,1" Padding="7,1,7,1">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="Жиры: " Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                    <TextBlock x:Name="FatWeight" Text="55" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                    <TextBlock Text="г" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                </StackPanel>
+                                            </Border>
+
+                                            <Border BorderBrush="#FF8D6B9E" Background="#FFCDADF4" BorderThickness="2" CornerRadius="10" Margin="3,1,4,1" Padding="7,1,7,1">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="Углеводы: " Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                    <TextBlock x:Name="carbnWeight" Text="91" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                    <TextBlock Text="г" Foreground="DimGray" FontFamily="Montserrat" FontSize="15"/>
+                                                </StackPanel>
+                                            </Border>
+
+                                        </StackPanel>
                                     </StackPanel>
                                 </Border>
                                 <Grid>
@@ -319,14 +345,6 @@
 
 
                         <StackPanel>
-                            <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,10,20,0" MouseDown="ResetProductForDay" Height="90">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
-                                </Border.Effect>
-                                <materialDesign:PackIcon Kind="Autorenew" 
-                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
-                                                     Height="80" Width="90" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
                             <ListBox Margin="10" x:Name="listBoxProductsForOneDay" 
                              ItemContainerStyle="{StaticResource listBoxItemProductForDay}" Background="Transparent"/>
                             <Border CornerRadius="20" Background="#FFE5D1FA" Margin="20,0,20,5" MouseDown="AddProductForDay">
