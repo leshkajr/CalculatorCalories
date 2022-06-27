@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Controller;
 using DbCalculatorСalorie.Models;
 using Nutrient.Calculator;
 using Products.Search;
@@ -22,8 +23,9 @@ namespace Interface
         User user;
         public MainWindow(User user)
         {
-            InitializeComponent();
             this.user = user;
+            InitializeComponent();
+            userName.Text = user.Name;
             categoriesList.ItemsSource = searchCategory.Search();
             listBoxProducts.ItemsSource = searchProduct.Search("",0);
             productsDiertForTheDay = serchDiertForTheDay.Search(user);
@@ -122,6 +124,49 @@ namespace Interface
             allFats.Text = product.Fats.ToString();
             allCalories.Text = product.Calories.ToString();
             allWeigth.Text = product.Weight.ToString();
+        }
+
+        private void RadioButton_Weight(object sender, RoutedEventArgs e)
+        {
+            RadioButton();
+        }
+
+        private void userWeght_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EditUser editUser = new EditUser();
+            user.Weight = int.Parse(userWeght.Text);
+            editUser.Edit(user);
+            RadioButton();
+
+        }
+
+        private void userHeight_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EditUser editUser = new EditUser();         
+            user.Height = int.Parse(userHeigth.Text);
+            editUser.Edit(user);
+            RadioButton();
+        }
+
+        public void RadioButton()
+        {
+            Product nutritionProducts = new Product();
+            if (SaveWeigth.IsChecked == true)
+            {
+                CountingCaloriesWeightSave countingCaloriesWeightSave = new CountingCaloriesWeightSave();
+                nutritionProducts = countingCaloriesWeightSave.NutrientCount(null, user, new DateTime());
+            }
+            else if (GainWeigth.IsChecked == true)
+            {
+                CountingCaloriesWeightGain countingCaloriesWeightGain = new CountingCaloriesWeightGain();
+                nutritionProducts = countingCaloriesWeightGain.NutrientCount(null, user, new DateTime());
+            }
+            else if (LossWeigth.IsChecked == true)
+            {
+                CountingCaloriesWeightLoss countingCaloriesWeightLoss = new CountingCaloriesWeightLoss();
+                nutritionProducts = countingCaloriesWeightLoss.NutrientCount(null, user, new DateTime());
+            }
+            CaloriesWeght.Text = nutritionProducts.Calories.ToString();
         }
     }
 }

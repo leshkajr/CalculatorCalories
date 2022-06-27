@@ -147,9 +147,9 @@
                                         <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.15" RenderingBias="Performance" ShadowDepth="3"/>
                                     </Border.Effect>
                                     <StackPanel Orientation="Horizontal">
-                                        <RadioButton Content="Уменьшение веса" Margin="10,0,0,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold"/>
-                                        <RadioButton Content="Увеличение веса" Margin="10,0,0,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold"/>
-                                        <RadioButton Content="Сохранение веса" Margin="10,0,15,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold"/>
+                                        <RadioButton x:Name="LossWeigth" Content="Уменьшение веса" Margin="10,0,0,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold" Click="RadioButton_Weight" />
+                                        <RadioButton x:Name="GainWeigth" Content="Увеличение веса" Margin="10,0,0,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold" Click="RadioButton_Weight"/>
+                                        <RadioButton x:Name="SaveWeigth" Content="Сохранение веса" Margin="10,0,15,0" Padding="4,2,0,0" FontSize="13" FontFamily="Montserrat SemiBold" Click="RadioButton_Weight" IsChecked="true"/>
                                     </StackPanel>
                                 </Border>
 
@@ -175,7 +175,7 @@
                                     <StackPanel>
                                         <TextBlock Text="Ваша дневная норма калорий в день:" FontSize="25"
                                        FontFamily="Montserrat Black" Foreground="#FF4A316A" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="2300 ккал" FontSize="100"
+                                        <TextBlock x:Name="CaloriesWeght" Text="2300 ккал" FontSize="100"
                                        FontFamily="Montserrat Black" Foreground="#DD7B53A6" HorizontalAlignment="Center" />
 
                                     </StackPanel>
@@ -191,8 +191,8 @@
                                                 <TextBlock Text="Вес:" Margin="10 0 0 0" FontSize="25" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBox Text="100" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
-                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" Style="{StaticResource MaterialDesignDataGridComboBoxEditableTextBox}"/>
+                                                    <TextBox x:Name="userWeght" Text="100" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" Style="{StaticResource MaterialDesignDataGridComboBoxEditableTextBox}" TextChanged="userWeght_TextChanged"/>
                                                     <TextBlock Text="кг" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
                                                 </StackPanel>
@@ -207,8 +207,8 @@
                                                 <TextBlock Text="Рост:" Margin="10 0 0 0" FontSize="25" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#FF4A316A"/>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBox Text="180" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
-                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" Style="{StaticResource MaterialDesignDataGridComboBoxEditableTextBox}"/>
+                                                    <TextBox x:Name="userHeigth" Text="180" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
+                                                            FontFamily="Montserrat Black" Foreground="#DD7B53A6" Style="{StaticResource MaterialDesignDataGridComboBoxEditableTextBox}" TextChanged="userHeight_TextChanged"/>
                                                     <TextBlock Text="см" Margin="10 0 0 0" FontSize="80" HorizontalAlignment="Left"
                                                             FontFamily="Montserrat Black" Foreground="#DD7B53A6" />
                                                 </StackPanel>
