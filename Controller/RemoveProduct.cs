@@ -14,9 +14,12 @@ namespace Controller
         {
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {
-                Product rmv = db.Products.Where(r => r.id == 8).FirstOrDefault();
-                db.Products.Remove(rmv);
-                db.SaveChanges();
+                Product rmv = db.Products.Where(r => r.id == id).FirstOrDefault();
+                if (rmv != null)
+                {
+                    db.Products.Remove(rmv);
+                    db.SaveChanges();
+                }
             }
         }
     }
