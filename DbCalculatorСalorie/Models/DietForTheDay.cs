@@ -19,6 +19,4 @@ namespace DbCalculatorСalorie.Models
             Products = new List<Product>();
         }
     }
-
-
 }

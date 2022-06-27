@@ -353,8 +353,8 @@
                                             <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
                                         </Border.Effect>
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="Ккал " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
-                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock  Text="Ккал " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock x:Name="allCalories" Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                             <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                         </StackPanel>
                                     </Border>
@@ -365,7 +365,7 @@
                                         </Border.Effect>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Углеводы " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
-                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock  x:Name="allCarb" Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                             <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                         </StackPanel>
                                     </Border>
@@ -376,7 +376,7 @@
                                         </Border.Effect>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Белки " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
-                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock  x:Name="allProtein" Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                             <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                         </StackPanel>
                                     </Border>
@@ -387,7 +387,7 @@
                                         </Border.Effect>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Жиры " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
-                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock  x:Name="allFats" Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                             <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                         </StackPanel>
 
@@ -399,7 +399,7 @@
                                         </Border.Effect>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text=" Вес: " Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
-                                            <TextBlock Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
+                                            <TextBlock  x:Name="allWeigth" Text="0" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                             <TextBlock Text="г" Foreground="#DD7B53A6" FontFamily="Montserrat" FontSize="15" Margin="0,1,0,0"/>
                                         </StackPanel>
                                     </Border>

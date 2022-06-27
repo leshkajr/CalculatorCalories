@@ -17,12 +17,15 @@ namespace Controller
             CountingCaloriesProduct countingCaloriesProduct = new CountingCaloriesProduct();
             
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
-            { 
-                var serchDay = db.DietForTheDays.FirstOrDefault(x => x.Date == date);
+            {
+                List<DietForTheDay> dietForTheDays = new List<DietForTheDay>();
+                dietForTheDays = db.DietForTheDays.ToList();
+                var serchDay = dietForTheDays.FirstOrDefault(x => x.Date.Date == date.Date);
                 if (serchDay != null)
                 {
                     Product newProduct = product;
                     newProduct = countingCaloriesProduct.NutrientCount(product, null, date);
+                    newProduct.CategoryId = null;
                     serchDay.Products.Add(product);
                 }
                 else
@@ -31,6 +34,7 @@ namespace Controller
                     newProduct = countingCaloriesProduct.NutrientCount(product, null, date);
                     DietForTheDay newDay = new DietForTheDay() { Date = date, userId = user.id };
                     newDay.Date = date;
+                    newProduct.CategoryId = null;
                     newDay.Products.Add(newProduct);
                     db.DietForTheDays.Add(newDay); 
                 }

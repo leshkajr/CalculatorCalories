@@ -15,12 +15,13 @@ namespace Products.Search
             DateTime date = DateTime.Now;
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {
+                var allProducts = db.Products.ToList();
                 var SearchDietForTheDays = db.DietForTheDays.Where(x=>x.user.id == user.id).ToList();
                 var dietForTheDays = SearchDietForTheDays.FirstOrDefault(x=>x.Date.Date == date.Date);
                 if(dietForTheDays != null)
                 {
-                    var products = db.Products.Where(x => x.DietForTheDayId == dietForTheDays.id);
-                    return products.ToList();
+                  
+                    return dietForTheDays.Products.ToList();
                 }
                 else
                 {
