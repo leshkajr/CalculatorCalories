@@ -177,13 +177,24 @@ namespace Interface
 
         private void Delete_ProductDay(object sender, RoutedEventArgs e)
         {
-           var a = listBoxProductsForOneDay.SelectedItem;
+            RemoveProduct removeProduct = new RemoveProduct();
+            Product deleteProduct = listBoxProductsForOneDay.SelectedItem as Product;
+            if (deleteProduct != null)
+            {
+                removeProduct.RemoveProductI(deleteProduct.id);
+            }
+            productsDiertForTheDay = serchDiertForTheDay.Search(user);
+            if (productsDiertForTheDay != null)
+            {
+                listBoxProductsForOneDay.ItemsSource = productsDiertForTheDay;
+                inputAllNutritionDay(countingCaloriesForTheDay.NutrientCount(productsDiertForTheDay));
+            }
         }
 
         private void listBoxProducts_Delete(object sender, RoutedEventArgs e)
         {
             RemoveProduct removeProduct = new RemoveProduct();
-            Product deleteProduct = listBoxProductsForOneDay.SelectedItem as Product;
+            Product deleteProduct = listBoxProducts.SelectedItem as Product;
             removeProduct.RemoveProductI(deleteProduct.id);
             listBoxProducts.ItemsSource = searchProduct.Search("", 0);
         }
