@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202206271226040_addV10.designer.cs">
       <DependentUpon>202206271226040_addV10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206271931166_addDoubleNutrition.cs" />
+    <Compile Include="Migrations\202206271931166_addDoubleNutrition.designer.cs">
+      <DependentUpon>202206271931166_addDoubleNutrition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DietForTheDay.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206271226040_addV10.resx">
       <DependentUpon>202206271226040_addV10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206271931166_addDoubleNutrition.resx">
+      <DependentUpon>202206271931166_addDoubleNutrition.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

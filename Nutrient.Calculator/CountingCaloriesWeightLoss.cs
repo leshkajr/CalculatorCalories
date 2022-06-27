@@ -24,7 +24,7 @@ namespace Nutrient.Calculator
         public Product NutrientCount(Product product, User user, DateTime date)
         {
             double needed_calories = (655 + (user.Height * 1.8) + (user.Weight * 9.6) - (user.Age * 4.7)) * 1.38 - 200;
-            return new Product() { Calories = (int)needed_calories, Protein = (int)(needed_calories * 0.27) / (int)Protein, Fats = (int)(needed_calories * 0.27) / (int)Fats, Carbohydrates = (int)(needed_calories * 0.46) / (int)Carbohydrates };
+            return new Product() { Calories = (int)needed_calories, Protein =(needed_calories * 0.27) / Protein, Fats = (needed_calories * 0.27) / Fats, Carbohydrates = (needed_calories * 0.46) /Carbohydrates };
         }
     }
 }

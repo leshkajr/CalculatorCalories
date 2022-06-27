@@ -11,11 +11,11 @@ namespace DbCalculatorСalorie.Models
     {
         public int id { get; set; }
         public string Name { get; set; }
-        public int Protein { get; set; }
-        public int Fats { get; set; }
-        public int Carbohydrates { get; set; }
+        public double Protein { get; set; }
+        public double Fats { get; set; }
+        public double Carbohydrates { get; set; }
         public double Weight { get; set; }
-        public int Calories { get; set; }
+        public float Calories { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
         public int? DietForTheDayId { get; set; }
@@ -27,6 +27,7 @@ namespace DbCalculatorСalorie.Models
             {
                 var category = db.Categories.FirstOrDefault(x => x.id == CategoryId);
                 Product newProduct = new Product() { Name = name, Protein = protein, Carbohydrates = carbohydrates, Fats = fats };
+                newProduct.Weight = 100;
                 newProduct.Calories = (int)(protein * 4.2 + fats * 9.29 + carbohydrates * 4.2);
                 db.Products.Add(newProduct);
                 category.Products.Add(newProduct);

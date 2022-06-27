@@ -21,7 +21,7 @@
                     <TextBox x:Name="Fats" materialDesign:HintAssist.Hint = "Жиры" FontFamily="Montserrat" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="570" FontSize="14" Margin="25,0,25,1"/>
                     <TextBox x:Name="Carbohydrates" materialDesign:HintAssist.Hint = "Углеводы" FontFamily="Montserrat" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="570" FontSize="14" Margin="25,0,25,1"/>
 
-                    <Button Content="Сохранить" Margin="25,15,25,0"/>
+                    <Button Content="Сохранить" Margin="25,15,25,0" Click="editProduck"/>
                 </StackPanel>
             </Grid>
         </Border>

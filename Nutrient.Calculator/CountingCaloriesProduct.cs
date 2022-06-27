@@ -20,9 +20,9 @@ namespace Nutrient.Calculator
         /// <returns>Возвращает изменённый product</returns>
         public Product NutrientCount(Product product, User user, DateTime date)
         {
-            product.Protein = (int)((product.Weight * product.Protein) / 100);
-            product.Fats = (int)((product.Weight * product.Fats) / 100);
-            product.Carbohydrates = (int)((product.Weight * product.Carbohydrates) / 100);
+            product.Protein = (product.Weight * product.Protein) / 100;
+            product.Fats = (product.Weight * product.Fats) / 100;
+            product.Carbohydrates = (product.Weight * product.Carbohydrates) / 100;
 
             product.Calories = (int)(product.Fats * this.Fats + product.Carbohydrates * this.Carbohydrates + product.Protein * this.Protein);
             return product;
