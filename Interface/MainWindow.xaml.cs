@@ -82,13 +82,17 @@ namespace Interface
         {
             try
             {
-                InfoProduct infoProduct = new InfoProduct();
-                infoProduct.Name.Text = (listBoxProducts.SelectedItem as Product).Name;
-                infoProduct.Calories.Text = (listBoxProducts.SelectedItem as Product).Calories.ToString();
-                infoProduct.Protein.Text = (listBoxProducts.SelectedItem as Product).Protein.ToString();
-                infoProduct.Fats.Text = (listBoxProducts.SelectedItem as Product).Fats.ToString();
-                infoProduct.Carbohydrates.Text = (listBoxProducts.SelectedItem as Product).Carbohydrates.ToString();
-                infoProduct.ShowDialog();
+                if (listBoxProducts.SelectedItem != null)
+                {
+                    InfoProduct infoProduct = new InfoProduct(listBoxProducts.SelectedItem as Product);
+                    infoProduct.Name.Text = (listBoxProducts.SelectedItem as Product).Name;
+                    infoProduct.Calories.Text = (listBoxProducts.SelectedItem as Product).Calories.ToString();
+                    infoProduct.Protein.Text = (listBoxProducts.SelectedItem as Product).Protein.ToString();
+                    infoProduct.Fats.Text = (listBoxProducts.SelectedItem as Product).Fats.ToString();
+                    infoProduct.Carbohydrates.Text = (listBoxProducts.SelectedItem as Product).Carbohydrates.ToString();
+                    infoProduct.ShowDialog();
+                }
+                listBoxProducts.ItemsSource = searchProduct.Search("", 0);
             }
             catch (Exception ex)
             {

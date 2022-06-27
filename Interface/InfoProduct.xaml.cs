@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controller;
+using DbCalculatorСalorie.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,19 @@ namespace Interface
     /// </summary>
     public partial class InfoProduct : Window
     {
-        public InfoProduct()
+        Product product;
+        public InfoProduct(Product product)
         {
             InitializeComponent();
+            this.product = product;
+        }
+
+        private void editProduck(object sender, RoutedEventArgs e)
+        {
+            EditProduct editProduct = new EditProduct();
+            editProduct.Editing(product, int.Parse(Protein.Text), int.Parse(Carbohydrates.Text), int.Parse(Fats.Text));
+            this.Close();
+            
         }
     }
 }
