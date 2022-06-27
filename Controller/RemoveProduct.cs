@@ -10,7 +10,7 @@ namespace Controller
 {
     public class RemoveProduct
     {
-        void RemoveProductI(int id) //отправляем id выбранного продукта и удаляем его из базы данных.
+        public void RemoveProductI(int id) //отправляем id выбранного продукта и удаляем его из базы данных.
         {
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {
