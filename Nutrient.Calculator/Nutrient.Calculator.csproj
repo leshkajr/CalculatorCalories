@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="CountingCaloriesForTheDay.cs" />
     <Compile Include="CountingCaloriesProduct.cs" />
+    <Compile Include="CountingCaloriesWeightGain.cs" />
+    <Compile Include="CountingCaloriesWeightLoss.cs" />
+    <Compile Include="CountingCaloriesWeightSave.cs" />
     <Compile Include="NutrientCalories.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
