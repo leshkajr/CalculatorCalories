@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Date\CalculatorСalorieDbContext.cs" />
-    <Compile Include="IProduct.cs" />
     <Compile Include="Migrations\202206211937314_addMigrationV1.cs" />
     <Compile Include="Migrations\202206211937314_addMigrationV1.designer.cs">
       <DependentUpon>202206211937314_addMigrationV1.cs</DependentUpon>
@@ -84,6 +83,10 @@
     <Compile Include="Migrations\202206271052053_updateDietDay.cs" />
     <Compile Include="Migrations\202206271052053_updateDietDay.designer.cs">
       <DependentUpon>202206271052053_updateDietDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206271226040_addV10.cs" />
+    <Compile Include="Migrations\202206271226040_addV10.designer.cs">
+      <DependentUpon>202206271226040_addV10.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -120,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206271052053_updateDietDay.resx">
       <DependentUpon>202206271052053_updateDietDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206271226040_addV10.resx">
+      <DependentUpon>202206271226040_addV10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

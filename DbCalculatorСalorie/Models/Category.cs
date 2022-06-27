@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DbCalculatorСalorie.Models
 {
-    public class Category:IProduct
+    public class Category
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -33,14 +33,5 @@ namespace DbCalculatorСalorie.Models
             }
         }
 
-        public void EditProduct()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveProduct()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

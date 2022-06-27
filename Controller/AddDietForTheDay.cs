@@ -29,7 +29,7 @@ namespace Controller
                 {
                     Product newProduct = product;
                     newProduct = countingCaloriesProduct.NutrientCount(product, null, date);
-                    DietForTheDay newDay = new DietForTheDay() { Date = date, user = user, userId = user.id };
+                    DietForTheDay newDay = new DietForTheDay() { Date = date, userId = user.id };
                     newDay.Date = date;
                     newDay.Products.Add(newProduct);
                     db.DietForTheDays.Add(newDay); 

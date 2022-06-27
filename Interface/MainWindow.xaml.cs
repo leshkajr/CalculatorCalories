@@ -14,14 +14,17 @@ namespace Interface
     public partial class MainWindow : Window
     {
         SearchCategory searchCategory = new SearchCategory();
-        SearchProduct SearchProduct = new SearchProduct();
+        SearchProduct searchProduct = new SearchProduct();
+        SerchDiertForTheDay serchDiertForTheDay = new SerchDiertForTheDay();
         User user;
         public MainWindow(User user)
         {
             InitializeComponent();
-            categoriesList.ItemsSource = searchCategory.Search();
-            listBoxProducts.ItemsSource = SearchProduct.Search("",0);
             this.user = user;
+            categoriesList.ItemsSource = searchCategory.Search();
+            listBoxProducts.ItemsSource = searchProduct.Search("",0);
+            listBoxProductsForOneDay.ItemsSource = serchDiertForTheDay.Search(user);
+           
 
         }
         private void Button_AddProduct(object sender, RoutedEventArgs e) // Добавление продукта в категорию
@@ -96,7 +99,7 @@ namespace Interface
         }
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-               listBoxProducts.ItemsSource = SearchProduct.Search(searchTextBox.Text,(categoriesList.SelectedItem as Category).id);
+               listBoxProducts.ItemsSource = searchProduct.Search(searchTextBox.Text,(categoriesList.SelectedItem as Category).id);
         }
     }
 }
