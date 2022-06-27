@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using DbCalculatorСalorie.Models;
+using Nutrient.Calculator;
 using Products.Search;
 
 namespace Interface
@@ -16,6 +17,8 @@ namespace Interface
         SearchCategory searchCategory = new SearchCategory();
         SearchProduct searchProduct = new SearchProduct();
         SerchDiertForTheDay serchDiertForTheDay = new SerchDiertForTheDay();
+        CountingCaloriesForTheDay countingCaloriesForTheDay = new CountingCaloriesForTheDay();
+        List<Product> productsDiertForTheDay;
         User user;
         public MainWindow(User user)
         {
@@ -23,8 +26,12 @@ namespace Interface
             this.user = user;
             categoriesList.ItemsSource = searchCategory.Search();
             listBoxProducts.ItemsSource = searchProduct.Search("",0);
-            listBoxProductsForOneDay.ItemsSource = serchDiertForTheDay.Search(user);
-           
+            productsDiertForTheDay = serchDiertForTheDay.Search(user);
+            if (productsDiertForTheDay != null)
+            {
+                listBoxProductsForOneDay.ItemsSource = productsDiertForTheDay;
+                inputAllNutritionDay(countingCaloriesForTheDay.NutrientCount(productsDiertForTheDay));
+            }
 
         }
         private void Button_AddProduct(object sender, RoutedEventArgs e) // Добавление продукта в категорию
@@ -48,7 +55,13 @@ namespace Interface
         {
             AddProductFromList window_AddProductFromList = new AddProductFromList(user);
             window_AddProductFromList.listProducts.ItemsSource = listBoxProducts.ItemsSource;
-            window_AddProductFromList.ShowDialog();         
+            window_AddProductFromList.ShowDialog();
+            productsDiertForTheDay = serchDiertForTheDay.Search(user);
+            if (productsDiertForTheDay != null)
+            {
+                listBoxProductsForOneDay.ItemsSource = productsDiertForTheDay;
+                inputAllNutritionDay(countingCaloriesForTheDay.NutrientCount(productsDiertForTheDay));
+            }
         }
 
         private void ResetProductForDay(object sender, MouseButtonEventArgs e) // Удаление всех продуктов из дневного рациона
@@ -100,6 +113,15 @@ namespace Interface
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
                listBoxProducts.ItemsSource = searchProduct.Search(searchTextBox.Text,(categoriesList.SelectedItem as Category).id);
+        }
+
+        public void inputAllNutritionDay(Product product)
+        {
+            allProtein.Text = product.Protein.ToString();
+            allCarb.Text = product.Carbohydrates.ToString();
+            allFats.Text = product.Fats.ToString();
+            allCalories.Text = product.Calories.ToString();
+            allWeigth.Text = product.Weight.ToString();
         }
     }
 }
