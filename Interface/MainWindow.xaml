@@ -13,7 +13,6 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border CornerRadius="20" Background="#FFE5D1FA" Margin="10" MinWidth="120" Width="215">
-                            <!--MouseDown="Item_MouseDown"-->
                             <Border.Effect>
                                 <DropShadowEffect Color="#FFD0AAFF" BlurRadius="15" Direction="0" Opacity="0.35" RenderingBias="Performance" ShadowDepth="3"/>
                             </Border.Effect>
@@ -25,16 +24,17 @@
                                         <Border Margin="-8,1,0,5" VerticalAlignment="Bottom" Background="#00AF8FCF">
                                             <TextBlock Text="ккал" Foreground="#DD68478C" FontFamily="Montserrat Black" FontSize="12" Margin="7,3,0,3"></TextBlock>
                                         </Border>
+                                        <TextBlock x:Name="id"/>
                                     </StackPanel>
                                 </Border>
 
                                 <Grid Margin="3,-2,3,0">
-                                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignToolButton}">
+                                    <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignToolButton}" Click="listBoxProducts_Selected">
                                         <materialDesign:PackIcon Kind="Edit" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
                                     </Button>
-                                    <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolButton}">
+                                    <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolButton}" Click="listBoxProducts_Delete">
                                         <materialDesign:PackIcon Kind="Delete" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
@@ -133,6 +133,11 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="IsSelected" Value="True"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid UseLayoutRounding="True">
@@ -324,7 +329,7 @@
                     
 
                     <ListBox Margin="10,5,10,0" x:Name="listBoxProducts" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="2"
-                             ItemContainerStyle="{StaticResource listBoxItemProduct}" Background="Transparent"  SelectionChanged="listBoxProducts_Selected">
+                            ItemContainerStyle="{StaticResource listBoxItemProduct}" Background="Transparent">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal"/>

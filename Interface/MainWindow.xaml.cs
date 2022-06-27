@@ -179,5 +179,13 @@ namespace Interface
         {
            var a = listBoxProductsForOneDay.SelectedItem;
         }
+
+        private void listBoxProducts_Delete(object sender, RoutedEventArgs e)
+        {
+            RemoveProduct removeProduct = new RemoveProduct();
+            Product deleteProduct = listBoxProductsForOneDay.SelectedItem as Product;
+            removeProduct.RemoveProductI(deleteProduct.id);
+            listBoxProducts.ItemsSource = searchProduct.Search("", 0);
+        }
     }
 }
