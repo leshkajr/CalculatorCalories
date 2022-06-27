@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DbCalculatorСalorie.Models
 {
-    public class Product
+    public class Product:IProduct
     {
         public int id { get; set; }
         public string Name { get; set; }
@@ -25,7 +25,7 @@ namespace DbCalculatorСalorie.Models
             DietForTheDays = new List<DietForTheDay>();
         }
 
-        public void AddProduct(string name,int protein,int carbohydrates,int fats,int CategoryId)
+        public void AddProduct(string name,int protein,int carbohydrates,int fats,int CategoryId,Product product)
         {
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {

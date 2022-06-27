@@ -77,6 +77,14 @@
     <Compile Include="Migrations\202206221650303_addWeightinProduct.designer.cs">
       <DependentUpon>202206221650303_addWeightinProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206261858318_addDaysDiet.cs" />
+    <Compile Include="Migrations\202206261858318_addDaysDiet.designer.cs">
+      <DependentUpon>202206261858318_addDaysDiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206271052053_updateDietDay.cs" />
+    <Compile Include="Migrations\202206271052053_updateDietDay.designer.cs">
+      <DependentUpon>202206271052053_updateDietDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DietForTheDay.cs" />
@@ -106,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206221650303_addWeightinProduct.resx">
       <DependentUpon>202206221650303_addWeightinProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206261858318_addDaysDiet.resx">
+      <DependentUpon>202206261858318_addDaysDiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206271052053_updateDietDay.resx">
+      <DependentUpon>202206271052053_updateDietDay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

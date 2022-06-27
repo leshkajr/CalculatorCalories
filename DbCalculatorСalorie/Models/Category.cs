@@ -22,7 +22,7 @@ namespace DbCalculatorСalorie.Models
         }
 
 
-        public void AddProduct(string name, int protein, int carbohydrates, int fats, int CategoryId)
+        public void AddProduct(string name, int protein, int carbohydrates, int fats, int CategoryId, Product product)
         {
             using (CalculatorСalorieDbContext db = new CalculatorСalorieDbContext())
             {

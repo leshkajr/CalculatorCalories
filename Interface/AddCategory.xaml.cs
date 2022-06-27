@@ -28,7 +28,7 @@ namespace Interface
         private void Button_AddClick(object sender, RoutedEventArgs e)
         {
             Category addCategory = new Category();
-            addCategory.AddProduct(nameCategory.Text, 0, 0, 0, 0);
+            addCategory.AddProduct(nameCategory.Text, 0, 0, 0, 0,null);
             this.Close();
         }
     }
