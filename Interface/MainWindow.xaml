@@ -34,6 +34,11 @@
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"
                                                      Height="23" Width="23"/>
                                     </Button>
+                                    <Button HorizontalAlignment="Center" Style="{StaticResource MaterialDesignToolButton}" Click="listBoxProducts_info">
+                                        <materialDesign:PackIcon Kind="Information" 
+                                                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                                                     Height="23" Width="23"/>
+                                    </Button>
                                     <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolButton}" Click="listBoxProducts_Delete">
                                         <materialDesign:PackIcon Kind="Delete" 
                                                      Foreground="{DynamicResource PrimaryHueLightBrush}"

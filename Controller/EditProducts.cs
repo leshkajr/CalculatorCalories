@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Controller
 {
-    public class EditProduct
+    public class EditProducts
     {
         public Product SearchProductForEdit(int id) //наверняка у вас тут есть какоето окно редактирования, отправив id сюда получаем продукт для вывода его данных в это окно. p.s. если нет значит переделаю.
         {

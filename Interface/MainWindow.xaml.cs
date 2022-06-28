@@ -84,13 +84,13 @@ namespace Interface
             {
                 if (listBoxProducts.SelectedItem != null)
                 {
-                    InfoProduct infoProduct = new InfoProduct(listBoxProducts.SelectedItem as Product);
-                    infoProduct.Name.Text = (listBoxProducts.SelectedItem as Product).Name;
-                    infoProduct.Calories.Text = (listBoxProducts.SelectedItem as Product).Calories.ToString();
-                    infoProduct.Protein.Text = (listBoxProducts.SelectedItem as Product).Protein.ToString();
-                    infoProduct.Fats.Text = (listBoxProducts.SelectedItem as Product).Fats.ToString();
-                    infoProduct.Carbohydrates.Text = (listBoxProducts.SelectedItem as Product).Carbohydrates.ToString();
-                    infoProduct.ShowDialog();
+                    EditProduct editProduct = new EditProduct(listBoxProducts.SelectedItem as Product);
+                    editProduct.Name.Text = (listBoxProducts.SelectedItem as Product).Name;
+                    editProduct.Calories.Text = (listBoxProducts.SelectedItem as Product).Calories.ToString();
+                    editProduct.Protein.Text = (listBoxProducts.SelectedItem as Product).Protein.ToString("#.#");
+                    editProduct.Fats.Text = (listBoxProducts.SelectedItem as Product).Fats.ToString("#.#");
+                    editProduct.Carbohydrates.Text = (listBoxProducts.SelectedItem as Product).Carbohydrates.ToString("#.#");
+                    editProduct.ShowDialog();
                 }
                 listBoxProducts.ItemsSource = searchProduct.Search("", 0);
             }
@@ -98,7 +98,6 @@ namespace Interface
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
         private void Search_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -122,11 +121,11 @@ namespace Interface
 
         public void inputAllNutritionDay(Product product)
         {
-            allProtein.Text = product.Protein.ToString();
-            allCarb.Text = product.Carbohydrates.ToString();
+            allProtein.Text = product.Protein.ToString("#.#");
+            allCarb.Text = product.Carbohydrates.ToString("#.#");
             allFats.Text = product.Fats.ToString();
-            allCalories.Text = product.Calories.ToString();
-            allWeigth.Text = product.Weight.ToString();
+            allCalories.Text = product.Calories.ToString("#.#");
+            allWeigth.Text = product.Weight.ToString("#.#");
         }
 
         private void RadioButton_Weight(object sender, RoutedEventArgs e)
@@ -169,10 +168,10 @@ namespace Interface
                 CountingCaloriesWeightLoss countingCaloriesWeightLoss = new CountingCaloriesWeightLoss();
                 nutritionProducts = countingCaloriesWeightLoss.NutrientCount(null, user, new DateTime());
             }
-            CaloriesWeght.Text = nutritionProducts.Calories.ToString();
-            proteinWeight.Text = nutritionProducts.Protein.ToString();
-            carbnWeight.Text= nutritionProducts.Carbohydrates.ToString();
-            FatWeight.Text= nutritionProducts.Fats.ToString();
+            CaloriesWeght.Text = nutritionProducts.Calories.ToString("#.#");
+            proteinWeight.Text = nutritionProducts.Protein.ToString("#.#");
+            carbnWeight.Text= nutritionProducts.Carbohydrates.ToString("#.#");
+            FatWeight.Text= nutritionProducts.Fats.ToString("#.#");
         }
 
         private void Delete_ProductDay(object sender, RoutedEventArgs e)
@@ -197,6 +196,29 @@ namespace Interface
             Product deleteProduct = listBoxProducts.SelectedItem as Product;
             removeProduct.RemoveProductI(deleteProduct.id);
             listBoxProducts.ItemsSource = searchProduct.Search("", 0);
+        }
+
+        private void listBoxProducts_info(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (listBoxProducts.SelectedItem != null)
+                {
+                    InfoProduct infoProduct = new InfoProduct(listBoxProducts.SelectedItem as Product);
+                    infoProduct.Name.Text = (listBoxProducts.SelectedItem as Product).Name;
+                    infoProduct.Calories.Text = (listBoxProducts.SelectedItem as Product).Calories.ToString();
+                    infoProduct.Protein.Text = (listBoxProducts.SelectedItem as Product).Protein.ToString("#.#");
+                    infoProduct.Fats.Text = (listBoxProducts.SelectedItem as Product).Fats.ToString("#.#");
+                    infoProduct.Carbohydrates.Text = (listBoxProducts.SelectedItem as Product).Carbohydrates.ToString("#.#");
+                    infoProduct.ShowDialog();
+                }
+                listBoxProducts.ItemsSource = searchProduct.Search("", 0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
