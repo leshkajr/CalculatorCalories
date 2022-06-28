@@ -28,12 +28,9 @@ namespace Interface
             this.product = product;
         }
 
-        private void editProduck(object sender, RoutedEventArgs e)
+        private void Ok(object sender, RoutedEventArgs e)
         {
-            EditProduct editProduct = new EditProduct();
-            editProduct.Editing(product, int.Parse(Protein.Text), int.Parse(Carbohydrates.Text), int.Parse(Fats.Text));
             this.Close();
-            
         }
     }
 }

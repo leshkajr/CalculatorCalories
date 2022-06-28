@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddDietForTheDay.cs" />
-    <Compile Include="EditProduct.cs" />
+    <Compile Include="EditProducts.cs" />
     <Compile Include="EditUser.cs" />
     <Compile Include="IProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

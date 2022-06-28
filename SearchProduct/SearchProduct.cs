@@ -54,6 +54,7 @@ namespace Products.Search
                     if (name.Trim() != "")
                     {
                         products = db.Products.Where(x => x.CategoryId != null).ToList();
+                        products = products.Where(c => c.Name.ToLower().Contains(name)).ToList();
                     }
                     else
                     {
