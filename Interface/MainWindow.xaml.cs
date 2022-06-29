@@ -116,7 +116,14 @@ namespace Interface
         }
         private void categories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-               listBoxProducts.ItemsSource = searchProduct.Search(searchTextBox.Text,(categoriesList.SelectedItem as Category).id);
+            try
+            {
+                listBoxProducts.ItemsSource = searchProduct.Search(searchTextBox.Text, (categoriesList.SelectedItem as Category).id);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         public void inputAllNutritionDay(Product product)
